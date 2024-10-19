@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="21587972fb9c4442b4c191d3f88a245d" Name="Diagram1">
+        <EntityTypeShape EntityType="CAFESHOPModel.Area" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Bill" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Category" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.CF_Table" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Customer" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Ingredient" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.LoginHistory" Width="1.5" PointX="10.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.OrderDetail" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Order" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Product" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.ProductIngredient" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Promotion" Width="1.5" PointX="1.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.ProvideDetail" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.ProviderOrder" Width="1.5" PointX="8" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.ProviderOrderDetail" Width="1.5" PointX="11.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Provider" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.Size" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CAFESHOPModel.User" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="CAFESHOPModel.FK__CF_Table__AreaID__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Bill__CustomerID__7D439ABD" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Bill__OrderDetai__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Bill__UserID__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Product__Categor__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__CF_Table__Custom__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Orders__TableID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Customer__Promot__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProductIn__Ingre__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProvideDe__Ingre__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProviderO__Ingre__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__LoginHist__UserI__01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__OrderDeta__Order__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__OrderDeta__Produ__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__Product__SizeID__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProductIn__Produ__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProvideDe__Provi__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProviderO__Provi__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="CAFESHOPModel.FK__ProviderO__Provi__787EE5A0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

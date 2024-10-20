@@ -35,7 +35,7 @@ namespace DAL
             : base("name=CafeEntities")
         {
         }
-        
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

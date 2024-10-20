@@ -27,6 +27,7 @@ namespace DAL
         public string CategoryID { get; set; }
         public string SizeID { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

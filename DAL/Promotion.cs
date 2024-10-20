@@ -7,29 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Promotion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Promotion()
         {
-            this.Bills = new HashSet<Bill>();
-            this.LoginHistories = new HashSet<LoginHistory>();
+            this.Customers = new HashSet<Customer>();
         }
     
-        public int UserID { get; set; }
-        public string FullName { get; set; }
-        public string UserName { get; set; }
-        public string Userpassword { get; set; }
-        public string Role { get; set; }
+        public string PromotionID { get; set; }
+        public string PromotionName { get; set; }
+        public Nullable<decimal> DiscountAmount { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public System.DateTime EndDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LoginHistory> LoginHistories { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

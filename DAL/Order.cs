@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
@@ -20,8 +20,8 @@ namespace DAL.Models
             this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public int OrderID { get; set; }
-        public Nullable<int> TableID { get; set; }
+        public string OrderID { get; set; }
+        public string TableID { get; set; }
         public System.DateTime OrderDate { get; set; }
         public string Status { get; set; }
     

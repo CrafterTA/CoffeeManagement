@@ -7,30 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Product()
         {
-            this.Bills = new HashSet<Bill>();
-            this.CF_Table = new HashSet<CF_Table>();
+            this.OrderDetails = new HashSet<OrderDetail>();
+            this.ProductIngredients = new HashSet<ProductIngredient>();
         }
     
-        public int CustomerID { get; set; }
-        public string CustomerName { get; set; }
-        public Nullable<int> PromotionID { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string ProductID { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public string CategoryID { get; set; }
+        public string SizeID { get; set; }
+        public string Description { get; set; }
     
+        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual Size Size { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CF_Table> CF_Table { get; set; }
-        public virtual Promotion Promotion { get; set; }
+        public virtual ICollection<ProductIngredient> ProductIngredients { get; set; }
     }
 }

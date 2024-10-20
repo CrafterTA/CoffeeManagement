@@ -7,28 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CF_Table
+    public partial class Size
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CF_Table()
+        public Size()
         {
-            this.Orders = new HashSet<Order>();
+            this.Products = new HashSet<Product>();
         }
     
-        public int TableID { get; set; }
-        public string TableName { get; set; }
-        public Nullable<int> AreaID { get; set; }
-        public Nullable<int> CustomerID { get; set; }
-        public string Status { get; set; }
+        public string SizeID { get; set; }
+        public string SizeName { get; set; }
+        public Nullable<decimal> AdditionalPrice { get; set; }
     
-        public virtual Area Area { get; set; }
-        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

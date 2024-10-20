@@ -7,26 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Promotion
+    public partial class CF_Table
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Promotion()
+        public CF_Table()
         {
-            this.Customers = new HashSet<Customer>();
+            this.Orders = new HashSet<Order>();
         }
     
-        public int PromotionID { get; set; }
-        public string PromotionName { get; set; }
-        public Nullable<decimal> DiscountAmount { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
+        public string TableID { get; set; }
+        public string TableName { get; set; }
+        public string AreaID { get; set; }
+        public string CustomerID { get; set; }
+        public string Status { get; set; }
     
+        public virtual Area Area { get; set; }
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

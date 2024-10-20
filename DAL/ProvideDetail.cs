@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
     public partial class ProvideDetail
     {
-        public int ProvideDetailID { get; set; }
-        public Nullable<int> ProviderID { get; set; }
-        public Nullable<int> IngredientID { get; set; }
+        public string ProvideDetailID { get; set; }
+        public string ProviderID { get; set; }
+        public string IngredientID { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
     

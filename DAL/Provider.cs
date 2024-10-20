@@ -7,32 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Ingredient
+    public partial class Provider
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ingredient()
+        public Provider()
         {
-            this.ProductIngredients = new HashSet<ProductIngredient>();
             this.ProvideDetails = new HashSet<ProvideDetail>();
-            this.ProviderOrderDetails = new HashSet<ProviderOrderDetail>();
+            this.ProviderOrders = new HashSet<ProviderOrder>();
         }
     
-        public int IngredientID { get; set; }
-        public string IngredientName { get; set; }
-        public string Unit { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal Stock { get; set; }
+        public string ProviderID { get; set; }
+        public string ProviderName { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductIngredient> ProductIngredients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProvideDetail> ProvideDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProviderOrderDetail> ProviderOrderDetails { get; set; }
+        public virtual ICollection<ProviderOrder> ProviderOrders { get; set; }
     }
 }

@@ -7,28 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Provider
+    public partial class ProviderOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Provider()
+        public ProviderOrder()
         {
-            this.ProvideDetails = new HashSet<ProvideDetail>();
-            this.ProviderOrders = new HashSet<ProviderOrder>();
+            this.ProviderOrderDetails = new HashSet<ProviderOrderDetail>();
         }
     
-        public int ProviderID { get; set; }
-        public string ProviderName { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
+        public string ProviderOrderID { get; set; }
+        public string ProviderID { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public Nullable<System.DateTime> ExpectedDeliveryDate { get; set; }
+        public string Status { get; set; }
     
+        public virtual Provider Provider { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProvideDetail> ProvideDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProviderOrder> ProviderOrders { get; set; }
+        public virtual ICollection<ProviderOrderDetail> ProviderOrderDetails { get; set; }
     }
 }

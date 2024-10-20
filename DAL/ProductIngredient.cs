@@ -7,20 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProviderOrderDetail
+    public partial class ProductIngredient
     {
-        public int ProviderOrderDetailID { get; set; }
-        public int ProviderOrderID { get; set; }
-        public int IngredientID { get; set; }
+        public string ProductIngredientID { get; set; }
+        public string ProductID { get; set; }
+        public string IngredientID { get; set; }
         public decimal Quantity { get; set; }
-        public decimal Price { get; set; }
     
         public virtual Ingredient Ingredient { get; set; }
-        public virtual ProviderOrder ProviderOrder { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

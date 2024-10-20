@@ -7,32 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public User()
         {
-            this.OrderDetails = new HashSet<OrderDetail>();
-            this.ProductIngredients = new HashSet<ProductIngredient>();
+            this.Bills = new HashSet<Bill>();
+            this.LoginHistories = new HashSet<LoginHistory>();
         }
     
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public Nullable<int> SizeID { get; set; }
-        public string Description { get; set; }
+        public string UserName { get; set; }
+        public string Userpassword { get; set; }
+        public string FullName { get; set; }
+        public string Phone { get; set; }
+        public string IdentityCard { get; set; }
+        public string RoleID { get; set; }
     
-        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual Size Size { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductIngredient> ProductIngredients { get; set; }
+        public virtual ICollection<LoginHistory> LoginHistories { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

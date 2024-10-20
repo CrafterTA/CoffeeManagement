@@ -7,23 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Area
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Area()
+        public Customer()
         {
+            this.Bills = new HashSet<Bill>();
             this.CF_Table = new HashSet<CF_Table>();
         }
     
-        public int AreaID { get; set; }
-        public string AreaName { get; set; }
+        public string CustomerID { get; set; }
+        public string CustomerName { get; set; }
+        public string PromotionID { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bill> Bills { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CF_Table> CF_Table { get; set; }
+        public virtual Promotion Promotion { get; set; }
     }
 }

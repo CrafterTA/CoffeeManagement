@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace DAL.Models
             this.Products = new HashSet<Product>();
         }
     
-        public int CategoryID { get; set; }
+        public string CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
     

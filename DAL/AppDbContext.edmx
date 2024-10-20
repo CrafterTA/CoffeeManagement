@@ -4,22 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CAFESHOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CafeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Area">
           <Key>
             <PropertyRef Name="AreaID" />
           </Key>
-          <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="AreaName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="BillID" />
           </Key>
-          <Property Name="BillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OrderDetailID" Type="int" Nullable="false" />
-          <Property Name="UserID" Type="int" Nullable="false" />
-          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="BillID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="OrderDetailID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PaymentDate" Type="datetime" Nullable="false" />
           <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
-          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
         </EntityType>
@@ -36,19 +36,19 @@
           <Key>
             <PropertyRef Name="TableID" />
           </Key>
-          <Property Name="TableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="AreaID" Type="int" />
-          <Property Name="CustomerID" Type="int" />
+          <Property Name="AreaID" Type="varchar" MaxLength="10" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="10" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PromotionID" Type="int" />
+          <Property Name="PromotionID" Type="varchar" MaxLength="10" />
           <Property Name="Phone" Type="nvarchar" MaxLength="15" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -56,7 +56,7 @@
           <Key>
             <PropertyRef Name="IngredientID" />
           </Key>
-          <Property Name="IngredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IngredientID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="IngredientName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -66,8 +66,8 @@
           <Key>
             <PropertyRef Name="LoginHistoryID" />
           </Key>
-          <Property Name="LoginHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserID" Type="int" />
+          <Property Name="LoginHistoryID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="20" />
           <Property Name="LoginTime" Type="datetime" Nullable="false" />
           <Property Name="LogoutTime" Type="datetime" />
         </EntityType>
@@ -75,18 +75,18 @@
           <Key>
             <PropertyRef Name="OrderDetailID" />
           </Key>
-          <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductID" Type="int" />
-          <Property Name="OrderID" Type="int" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="OrderDetailID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="10" />
+          <Property Name="OrderID" Type="varchar" MaxLength="10" />
+          <Property Name="Quantity" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TableID" Type="int" />
+          <Property Name="OrderID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TableID" Type="varchar" MaxLength="10" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -94,27 +94,27 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="CategoryID" Type="int" />
-          <Property Name="SizeID" Type="int" />
+          <Property Name="CategoryID" Type="varchar" MaxLength="10" />
+          <Property Name="SizeID" Type="varchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="ProductIngredient">
           <Key>
             <PropertyRef Name="ProductIngredientID" />
           </Key>
-          <Property Name="ProductIngredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="IngredientID" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProductIngredientID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IngredientID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Quantity" Type="decimal" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Promotion">
           <Key>
             <PropertyRef Name="PromotionID" />
           </Key>
-          <Property Name="PromotionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PromotionID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="PromotionName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="StartDate" Type="datetime" Nullable="false" />
@@ -124,9 +124,9 @@
           <Key>
             <PropertyRef Name="ProvideDetailID" />
           </Key>
-          <Property Name="ProvideDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProviderID" Type="int" />
-          <Property Name="IngredientID" Type="int" />
+          <Property Name="ProvideDetailID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProviderID" Type="varchar" MaxLength="10" />
+          <Property Name="IngredientID" Type="varchar" MaxLength="10" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
@@ -134,8 +134,8 @@
           <Key>
             <PropertyRef Name="ProviderOrderID" />
           </Key>
-          <Property Name="ProviderOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProviderID" Type="int" Nullable="false" />
+          <Property Name="ProviderOrderID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProviderID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="ExpectedDeliveryDate" Type="datetime" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -144,9 +144,9 @@
           <Key>
             <PropertyRef Name="ProviderOrderDetailID" />
           </Key>
-          <Property Name="ProviderOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProviderOrderID" Type="int" Nullable="false" />
-          <Property Name="IngredientID" Type="int" Nullable="false" />
+          <Property Name="ProviderOrderDetailID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProviderOrderID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IngredientID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
@@ -154,30 +154,38 @@
           <Key>
             <PropertyRef Name="ProviderID" />
           </Key>
-          <Property Name="ProviderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProviderID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="ProviderName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
             <PropertyRef Name="SizeID" />
           </Key>
-          <Property Name="SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SizeID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="SizeName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AdditionalPrice" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
-            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
           </Key>
-          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Userpassword" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="IdentityCard" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleID" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Bill__CustomerID__7D439ABD">
+        <Association Name="FK__Bill__CustomerID__7E37BEF6">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,7 +197,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__OrderDetai__7C4F7684">
+        <Association Name="FK__Bill__OrderDetai__7D439ABD">
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,19 +209,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__UserID__7E37BEF6">
+        <Association Name="FK__Bill__UserName__7F2BE32F">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Principal>
             <Dependent Role="Bill">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CF_Table__AreaID__5AEE82B9">
+        <Association Name="FK__CF_Table__AreaID__5BE2A6F2">
           <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="*" />
           <ReferentialConstraint>
@@ -225,7 +233,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CF_Table__Custom__5BE2A6F2">
+        <Association Name="FK__CF_Table__Custom__5CD6CB2B">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="*" />
           <ReferentialConstraint>
@@ -237,7 +245,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Customer__Promot__5812160E">
+        <Association Name="FK__Customer__Promot__59063A47">
           <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
           <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -249,19 +257,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LoginHist__UserI__01142BA1">
+        <Association Name="FK__LoginHist__Usern__4E88ABD4">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="LoginHistory" Type="Self.LoginHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Principal>
             <Dependent Role="LoginHistory">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="Username" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Order__628FA481">
+        <Association Name="FK__OrderDeta__Order__6754599E">
           <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +281,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Produ__619B8048">
+        <Association Name="FK__OrderDeta__Produ__66603565">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__TableID__5EBF139D">
+        <Association Name="FK__Orders__TableID__6383C8BA">
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +305,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Categor__5070F446">
+        <Association Name="FK__Product__Categor__5FB337D6">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -309,7 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__SizeID__5165187F">
+        <Association Name="FK__Product__SizeID__60A75C0F">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -321,7 +329,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductIn__Ingre__6EF57B66">
+        <Association Name="FK__ProductIn__Ingre__6FE99F9F">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
           <End Role="ProductIngredient" Type="Self.ProductIngredient" Multiplicity="*" />
           <ReferentialConstraint>
@@ -333,7 +341,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductIn__Produ__6E01572D">
+        <Association Name="FK__ProductIn__Produ__6EF57B66">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="ProductIngredient" Type="Self.ProductIngredient" Multiplicity="*" />
           <ReferentialConstraint>
@@ -345,7 +353,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProvideDe__Ingre__72C60C4A">
+        <Association Name="FK__ProvideDe__Ingre__73BA3083">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
           <End Role="ProvideDetail" Type="Self.ProvideDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -357,7 +365,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProvideDe__Provi__71D1E811">
+        <Association Name="FK__ProvideDe__Provi__72C60C4A">
           <End Role="Providers" Type="Self.Providers" Multiplicity="0..1" />
           <End Role="ProvideDetail" Type="Self.ProvideDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -369,7 +377,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Ingre__797309D9">
+        <Association Name="FK__ProviderO__Ingre__7A672E12">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
           <End Role="ProviderOrderDetail" Type="Self.ProviderOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -381,7 +389,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Provi__75A278F5">
+        <Association Name="FK__ProviderO__Provi__76969D2E">
           <End Role="Providers" Type="Self.Providers" Multiplicity="1" />
           <End Role="ProviderOrder" Type="Self.ProviderOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -393,7 +401,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Provi__787EE5A0">
+        <Association Name="FK__ProviderO__Provi__797309D9">
           <End Role="ProviderOrder" Type="Self.ProviderOrder" Multiplicity="1" />
           <End Role="ProviderOrderDetail" Type="Self.ProviderOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -405,7 +413,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CAFESHOPModelStoreContainer">
+        <Association Name="FK__Users__RoleID__4BAC3F29">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CafeModelStoreContainer">
           <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -422,301 +442,316 @@
           <EntitySet Name="ProviderOrder" EntityType="Self.ProviderOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProviderOrderDetail" EntityType="Self.ProviderOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Providers" EntityType="Self.Providers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__CustomerID__7D439ABD" Association="Self.FK__Bill__CustomerID__7D439ABD">
+          <AssociationSet Name="FK__Bill__CustomerID__7E37BEF6" Association="Self.FK__Bill__CustomerID__7E37BEF6">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__OrderDetai__7C4F7684" Association="Self.FK__Bill__OrderDetai__7C4F7684">
+          <AssociationSet Name="FK__Bill__OrderDetai__7D439ABD" Association="Self.FK__Bill__OrderDetai__7D439ABD">
             <End Role="OrderDetail" EntitySet="OrderDetail" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__UserID__7E37BEF6" Association="Self.FK__Bill__UserID__7E37BEF6">
+          <AssociationSet Name="FK__Bill__UserName__7F2BE32F" Association="Self.FK__Bill__UserName__7F2BE32F">
             <End Role="Users" EntitySet="Users" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__CF_Table__AreaID__5AEE82B9" Association="Self.FK__CF_Table__AreaID__5AEE82B9">
+          <AssociationSet Name="FK__CF_Table__AreaID__5BE2A6F2" Association="Self.FK__CF_Table__AreaID__5BE2A6F2">
             <End Role="Area" EntitySet="Area" />
             <End Role="CF_Table" EntitySet="CF_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK__CF_Table__Custom__5BE2A6F2" Association="Self.FK__CF_Table__Custom__5BE2A6F2">
+          <AssociationSet Name="FK__CF_Table__Custom__5CD6CB2B" Association="Self.FK__CF_Table__Custom__5CD6CB2B">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CF_Table" EntitySet="CF_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK__Customer__Promot__5812160E" Association="Self.FK__Customer__Promot__5812160E">
+          <AssociationSet Name="FK__Customer__Promot__59063A47" Association="Self.FK__Customer__Promot__59063A47">
             <End Role="Promotion" EntitySet="Promotion" />
             <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__LoginHist__UserI__01142BA1" Association="Self.FK__LoginHist__UserI__01142BA1">
+          <AssociationSet Name="FK__LoginHist__Usern__4E88ABD4" Association="Self.FK__LoginHist__Usern__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="LoginHistory" EntitySet="LoginHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Order__628FA481" Association="Self.FK__OrderDeta__Order__628FA481">
+          <AssociationSet Name="FK__OrderDeta__Order__6754599E" Association="Self.FK__OrderDeta__Order__6754599E">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Produ__619B8048" Association="Self.FK__OrderDeta__Produ__619B8048">
+          <AssociationSet Name="FK__OrderDeta__Produ__66603565" Association="Self.FK__OrderDeta__Produ__66603565">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderDetail" EntitySet="OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__TableID__5EBF139D" Association="Self.FK__Orders__TableID__5EBF139D">
+          <AssociationSet Name="FK__Orders__TableID__6383C8BA" Association="Self.FK__Orders__TableID__6383C8BA">
             <End Role="CF_Table" EntitySet="CF_Table" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Categor__5070F446" Association="Self.FK__Product__Categor__5070F446">
+          <AssociationSet Name="FK__Product__Categor__5FB337D6" Association="Self.FK__Product__Categor__5FB337D6">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__SizeID__5165187F" Association="Self.FK__Product__SizeID__5165187F">
+          <AssociationSet Name="FK__Product__SizeID__60A75C0F" Association="Self.FK__Product__SizeID__60A75C0F">
             <End Role="Size" EntitySet="Size" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductIn__Ingre__6EF57B66" Association="Self.FK__ProductIn__Ingre__6EF57B66">
+          <AssociationSet Name="FK__ProductIn__Ingre__6FE99F9F" Association="Self.FK__ProductIn__Ingre__6FE99F9F">
             <End Role="Ingredient" EntitySet="Ingredient" />
             <End Role="ProductIngredient" EntitySet="ProductIngredient" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductIn__Produ__6E01572D" Association="Self.FK__ProductIn__Produ__6E01572D">
+          <AssociationSet Name="FK__ProductIn__Produ__6EF57B66" Association="Self.FK__ProductIn__Produ__6EF57B66">
             <End Role="Product" EntitySet="Product" />
             <End Role="ProductIngredient" EntitySet="ProductIngredient" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProvideDe__Ingre__72C60C4A" Association="Self.FK__ProvideDe__Ingre__72C60C4A">
+          <AssociationSet Name="FK__ProvideDe__Ingre__73BA3083" Association="Self.FK__ProvideDe__Ingre__73BA3083">
             <End Role="Ingredient" EntitySet="Ingredient" />
             <End Role="ProvideDetail" EntitySet="ProvideDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProvideDe__Provi__71D1E811" Association="Self.FK__ProvideDe__Provi__71D1E811">
+          <AssociationSet Name="FK__ProvideDe__Provi__72C60C4A" Association="Self.FK__ProvideDe__Provi__72C60C4A">
             <End Role="Providers" EntitySet="Providers" />
             <End Role="ProvideDetail" EntitySet="ProvideDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Ingre__797309D9" Association="Self.FK__ProviderO__Ingre__797309D9">
+          <AssociationSet Name="FK__ProviderO__Ingre__7A672E12" Association="Self.FK__ProviderO__Ingre__7A672E12">
             <End Role="Ingredient" EntitySet="Ingredient" />
             <End Role="ProviderOrderDetail" EntitySet="ProviderOrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Provi__75A278F5" Association="Self.FK__ProviderO__Provi__75A278F5">
+          <AssociationSet Name="FK__ProviderO__Provi__76969D2E" Association="Self.FK__ProviderO__Provi__76969D2E">
             <End Role="Providers" EntitySet="Providers" />
             <End Role="ProviderOrder" EntitySet="ProviderOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Provi__787EE5A0" Association="Self.FK__ProviderO__Provi__787EE5A0">
+          <AssociationSet Name="FK__ProviderO__Provi__797309D9" Association="Self.FK__ProviderO__Provi__797309D9">
             <End Role="ProviderOrder" EntitySet="ProviderOrder" />
             <End Role="ProviderOrderDetail" EntitySet="ProviderOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__RoleID__4BAC3F29" Association="Self.FK__Users__RoleID__4BAC3F29">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CAFESHOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CafeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Area">
           <Key>
             <PropertyRef Name="AreaID" />
           </Key>
-          <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="CF_Table" Relationship="Self.FK__CF_Table__AreaID__5AEE82B9" FromRole="Area" ToRole="CF_Table" />
+          <NavigationProperty Name="CF_Table" Relationship="Self.FK__CF_Table__AreaID__5BE2A6F2" FromRole="Area" ToRole="CF_Table" />
         </EntityType>
         <EntityType Name="Bill">
           <Key>
             <PropertyRef Name="BillID" />
           </Key>
-          <Property Name="BillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
-          <Property Name="UserID" Type="Int32" Nullable="false" />
-          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="BillID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderDetailID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__CustomerID__7D439ABD" FromRole="Bill" ToRole="Customer" />
-          <NavigationProperty Name="OrderDetail" Relationship="Self.FK__Bill__OrderDetai__7C4F7684" FromRole="Bill" ToRole="OrderDetail" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Bill__UserID__7E37BEF6" FromRole="Bill" ToRole="Users" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__CustomerID__7E37BEF6" FromRole="Bill" ToRole="Customer" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK__Bill__OrderDetai__7D439ABD" FromRole="Bill" ToRole="OrderDetail" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Bill__UserName__7F2BE32F" FromRole="Bill" ToRole="Users" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
-          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Categor__5070F446" FromRole="Category" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Categor__5FB337D6" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="CF_Table">
           <Key>
             <PropertyRef Name="TableID" />
           </Key>
-          <Property Name="TableID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AreaID" Type="Int32" />
-          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="AreaID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Area" Relationship="Self.FK__CF_Table__AreaID__5AEE82B9" FromRole="CF_Table" ToRole="Area" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__CF_Table__Custom__5BE2A6F2" FromRole="CF_Table" ToRole="Customer" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__TableID__5EBF139D" FromRole="CF_Table" ToRole="Orders" />
+          <NavigationProperty Name="Area" Relationship="Self.FK__CF_Table__AreaID__5BE2A6F2" FromRole="CF_Table" ToRole="Area" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__CF_Table__Custom__5CD6CB2B" FromRole="CF_Table" ToRole="Customer" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__TableID__6383C8BA" FromRole="CF_Table" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PromotionID" Type="Int32" />
+          <Property Name="PromotionID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__CustomerID__7D439ABD" FromRole="Customer" ToRole="Bill" />
-          <NavigationProperty Name="CF_Table" Relationship="Self.FK__CF_Table__Custom__5BE2A6F2" FromRole="Customer" ToRole="CF_Table" />
-          <NavigationProperty Name="Promotion" Relationship="Self.FK__Customer__Promot__5812160E" FromRole="Customer" ToRole="Promotion" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__CustomerID__7E37BEF6" FromRole="Customer" ToRole="Bill" />
+          <NavigationProperty Name="CF_Table" Relationship="Self.FK__CF_Table__Custom__5CD6CB2B" FromRole="Customer" ToRole="CF_Table" />
+          <NavigationProperty Name="Promotion" Relationship="Self.FK__Customer__Promot__59063A47" FromRole="Customer" ToRole="Promotion" />
         </EntityType>
         <EntityType Name="Ingredient">
           <Key>
             <PropertyRef Name="IngredientID" />
           </Key>
-          <Property Name="IngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IngredientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Stock" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="ProductIngredients" Relationship="Self.FK__ProductIn__Ingre__6EF57B66" FromRole="Ingredient" ToRole="ProductIngredient" />
-          <NavigationProperty Name="ProvideDetails" Relationship="Self.FK__ProvideDe__Ingre__72C60C4A" FromRole="Ingredient" ToRole="ProvideDetail" />
-          <NavigationProperty Name="ProviderOrderDetails" Relationship="Self.FK__ProviderO__Ingre__797309D9" FromRole="Ingredient" ToRole="ProviderOrderDetail" />
+          <NavigationProperty Name="ProductIngredients" Relationship="Self.FK__ProductIn__Ingre__6FE99F9F" FromRole="Ingredient" ToRole="ProductIngredient" />
+          <NavigationProperty Name="ProvideDetails" Relationship="Self.FK__ProvideDe__Ingre__73BA3083" FromRole="Ingredient" ToRole="ProvideDetail" />
+          <NavigationProperty Name="ProviderOrderDetails" Relationship="Self.FK__ProviderO__Ingre__7A672E12" FromRole="Ingredient" ToRole="ProviderOrderDetail" />
         </EntityType>
         <EntityType Name="LoginHistory">
           <Key>
             <PropertyRef Name="LoginHistoryID" />
           </Key>
-          <Property Name="LoginHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserID" Type="Int32" />
+          <Property Name="LoginHistoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LogoutTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="User" Relationship="Self.FK__LoginHist__UserI__01142BA1" FromRole="LoginHistory" ToRole="Users" />
+          <NavigationProperty Name="User" Relationship="Self.FK__LoginHist__Usern__4E88ABD4" FromRole="LoginHistory" ToRole="Users" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
             <PropertyRef Name="OrderDetailID" />
           </Key>
-          <Property Name="OrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductID" Type="Int32" />
-          <Property Name="OrderID" Type="Int32" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="OrderDetailID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__OrderDetai__7C4F7684" FromRole="OrderDetail" ToRole="Bill" />
-          <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__Order__628FA481" FromRole="OrderDetail" ToRole="Orders" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__OrderDeta__Produ__619B8048" FromRole="OrderDetail" ToRole="Product" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__OrderDetai__7D439ABD" FromRole="OrderDetail" ToRole="Bill" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__Order__6754599E" FromRole="OrderDetail" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__OrderDeta__Produ__66603565" FromRole="OrderDetail" ToRole="Product" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TableID" Type="Int32" />
+          <Property Name="OrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TableID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="CF_Table" Relationship="Self.FK__Orders__TableID__5EBF139D" FromRole="Orders" ToRole="CF_Table" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Order__628FA481" FromRole="Orders" ToRole="OrderDetail" />
+          <NavigationProperty Name="CF_Table" Relationship="Self.FK__Orders__TableID__6383C8BA" FromRole="Orders" ToRole="CF_Table" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Order__6754599E" FromRole="Orders" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="CategoryID" Type="Int32" />
-          <Property Name="SizeID" Type="Int32" />
+          <Property Name="CategoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SizeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5070F446" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__619B8048" FromRole="Product" ToRole="OrderDetail" />
-          <NavigationProperty Name="Size" Relationship="Self.FK__Product__SizeID__5165187F" FromRole="Product" ToRole="Size" />
-          <NavigationProperty Name="ProductIngredients" Relationship="Self.FK__ProductIn__Produ__6E01572D" FromRole="Product" ToRole="ProductIngredient" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5FB337D6" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__66603565" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="Size" Relationship="Self.FK__Product__SizeID__60A75C0F" FromRole="Product" ToRole="Size" />
+          <NavigationProperty Name="ProductIngredients" Relationship="Self.FK__ProductIn__Produ__6EF57B66" FromRole="Product" ToRole="ProductIngredient" />
         </EntityType>
         <EntityType Name="ProductIngredient">
           <Key>
             <PropertyRef Name="ProductIngredientID" />
           </Key>
-          <Property Name="ProductIngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="IngredientID" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProductIn__Ingre__6EF57B66" FromRole="ProductIngredient" ToRole="Ingredient" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__ProductIn__Produ__6E01572D" FromRole="ProductIngredient" ToRole="Product" />
+          <Property Name="ProductIngredientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProductIn__Ingre__6FE99F9F" FromRole="ProductIngredient" ToRole="Ingredient" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__ProductIn__Produ__6EF57B66" FromRole="ProductIngredient" ToRole="Product" />
         </EntityType>
         <EntityType Name="Promotion">
           <Key>
             <PropertyRef Name="PromotionID" />
           </Key>
-          <Property Name="PromotionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PromotionID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__Promot__5812160E" FromRole="Promotion" ToRole="Customer" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__Promot__59063A47" FromRole="Promotion" ToRole="Customer" />
         </EntityType>
         <EntityType Name="ProvideDetail">
           <Key>
             <PropertyRef Name="ProvideDetailID" />
           </Key>
-          <Property Name="ProvideDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProviderID" Type="Int32" />
-          <Property Name="IngredientID" Type="Int32" />
+          <Property Name="ProvideDetailID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProviderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProvideDe__Ingre__72C60C4A" FromRole="ProvideDetail" ToRole="Ingredient" />
-          <NavigationProperty Name="Provider" Relationship="Self.FK__ProvideDe__Provi__71D1E811" FromRole="ProvideDetail" ToRole="Providers" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProvideDe__Ingre__73BA3083" FromRole="ProvideDetail" ToRole="Ingredient" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK__ProvideDe__Provi__72C60C4A" FromRole="ProvideDetail" ToRole="Providers" />
         </EntityType>
         <EntityType Name="ProviderOrder">
           <Key>
             <PropertyRef Name="ProviderOrderID" />
           </Key>
-          <Property Name="ProviderOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProviderID" Type="Int32" Nullable="false" />
+          <Property Name="ProviderOrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProviderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Provider" Relationship="Self.FK__ProviderO__Provi__75A278F5" FromRole="ProviderOrder" ToRole="Providers" />
-          <NavigationProperty Name="ProviderOrderDetails" Relationship="Self.FK__ProviderO__Provi__787EE5A0" FromRole="ProviderOrder" ToRole="ProviderOrderDetail" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK__ProviderO__Provi__76969D2E" FromRole="ProviderOrder" ToRole="Providers" />
+          <NavigationProperty Name="ProviderOrderDetails" Relationship="Self.FK__ProviderO__Provi__797309D9" FromRole="ProviderOrder" ToRole="ProviderOrderDetail" />
         </EntityType>
         <EntityType Name="ProviderOrderDetail">
           <Key>
             <PropertyRef Name="ProviderOrderDetailID" />
           </Key>
-          <Property Name="ProviderOrderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProviderOrderID" Type="Int32" Nullable="false" />
-          <Property Name="IngredientID" Type="Int32" Nullable="false" />
+          <Property Name="ProviderOrderDetailID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProviderOrderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProviderO__Ingre__797309D9" FromRole="ProviderOrderDetail" ToRole="Ingredient" />
-          <NavigationProperty Name="ProviderOrder" Relationship="Self.FK__ProviderO__Provi__787EE5A0" FromRole="ProviderOrderDetail" ToRole="ProviderOrder" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK__ProviderO__Ingre__7A672E12" FromRole="ProviderOrderDetail" ToRole="Ingredient" />
+          <NavigationProperty Name="ProviderOrder" Relationship="Self.FK__ProviderO__Provi__797309D9" FromRole="ProviderOrderDetail" ToRole="ProviderOrder" />
         </EntityType>
         <EntityType Name="Provider">
           <Key>
             <PropertyRef Name="ProviderID" />
           </Key>
-          <Property Name="ProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProviderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="ProvideDetails" Relationship="Self.FK__ProvideDe__Provi__71D1E811" FromRole="Providers" ToRole="ProvideDetail" />
-          <NavigationProperty Name="ProviderOrders" Relationship="Self.FK__ProviderO__Provi__75A278F5" FromRole="Providers" ToRole="ProviderOrder" />
+          <NavigationProperty Name="ProvideDetails" Relationship="Self.FK__ProvideDe__Provi__72C60C4A" FromRole="Providers" ToRole="ProvideDetail" />
+          <NavigationProperty Name="ProviderOrders" Relationship="Self.FK__ProviderO__Provi__76969D2E" FromRole="Providers" ToRole="ProviderOrder" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__RoleID__4BAC3F29" FromRole="Roles" ToRole="Users" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
             <PropertyRef Name="SizeID" />
           </Key>
-          <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SizeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AdditionalPrice" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Product__SizeID__5165187F" FromRole="Size" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__SizeID__60A75C0F" FromRole="Size" ToRole="Product" />
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
           </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Userpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__UserID__7E37BEF6" FromRole="Users" ToRole="Bill" />
-          <NavigationProperty Name="LoginHistories" Relationship="Self.FK__LoginHist__UserI__01142BA1" FromRole="Users" ToRole="LoginHistory" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IdentityCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__UserName__7F2BE32F" FromRole="Users" ToRole="Bill" />
+          <NavigationProperty Name="LoginHistories" Relationship="Self.FK__LoginHist__Usern__4E88ABD4" FromRole="Users" ToRole="LoginHistory" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleID__4BAC3F29" FromRole="Users" ToRole="Roles" />
         </EntityType>
-        <Association Name="FK__CF_Table__AreaID__5AEE82B9">
+        <Association Name="FK__CF_Table__AreaID__5BE2A6F2">
           <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="*" />
           <ReferentialConstraint>
@@ -728,7 +763,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__CustomerID__7D439ABD">
+        <Association Name="FK__Bill__CustomerID__7E37BEF6">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -740,7 +775,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__OrderDetai__7C4F7684">
+        <Association Name="FK__Bill__OrderDetai__7D439ABD">
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -752,19 +787,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__UserID__7E37BEF6">
+        <Association Name="FK__Bill__UserName__7F2BE32F">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Principal>
             <Dependent Role="Bill">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Categor__5070F446">
+        <Association Name="FK__Product__Categor__5FB337D6">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -776,7 +811,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CF_Table__Custom__5BE2A6F2">
+        <Association Name="FK__CF_Table__Custom__5CD6CB2B">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="*" />
           <ReferentialConstraint>
@@ -788,7 +823,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Orders__TableID__5EBF139D">
+        <Association Name="FK__Orders__TableID__6383C8BA">
           <End Role="CF_Table" Type="Self.CF_Table" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -800,7 +835,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Customer__Promot__5812160E">
+        <Association Name="FK__Customer__Promot__59063A47">
           <End Role="Promotion" Type="Self.Promotion" Multiplicity="0..1" />
           <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -812,7 +847,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductIn__Ingre__6EF57B66">
+        <Association Name="FK__ProductIn__Ingre__6FE99F9F">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
           <End Role="ProductIngredient" Type="Self.ProductIngredient" Multiplicity="*" />
           <ReferentialConstraint>
@@ -824,7 +859,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProvideDe__Ingre__72C60C4A">
+        <Association Name="FK__ProvideDe__Ingre__73BA3083">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
           <End Role="ProvideDetail" Type="Self.ProvideDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -836,7 +871,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Ingre__797309D9">
+        <Association Name="FK__ProviderO__Ingre__7A672E12">
           <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
           <End Role="ProviderOrderDetail" Type="Self.ProviderOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -848,19 +883,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LoginHist__UserI__01142BA1">
+        <Association Name="FK__LoginHist__Usern__4E88ABD4">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
           <End Role="LoginHistory" Type="Self.LoginHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="UserName" />
             </Principal>
             <Dependent Role="LoginHistory">
-              <PropertyRef Name="UserID" />
+              <PropertyRef Name="Username" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Order__628FA481">
+        <Association Name="FK__OrderDeta__Order__6754599E">
           <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -872,7 +907,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDeta__Produ__619B8048">
+        <Association Name="FK__OrderDeta__Produ__66603565">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -884,7 +919,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__SizeID__5165187F">
+        <Association Name="FK__Product__SizeID__60A75C0F">
           <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -896,7 +931,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductIn__Produ__6E01572D">
+        <Association Name="FK__ProductIn__Produ__6EF57B66">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="ProductIngredient" Type="Self.ProductIngredient" Multiplicity="*" />
           <ReferentialConstraint>
@@ -908,7 +943,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProvideDe__Provi__71D1E811">
+        <Association Name="FK__ProvideDe__Provi__72C60C4A">
           <End Role="Providers" Type="Self.Provider" Multiplicity="0..1" />
           <End Role="ProvideDetail" Type="Self.ProvideDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -920,7 +955,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Provi__75A278F5">
+        <Association Name="FK__ProviderO__Provi__76969D2E">
           <End Role="Providers" Type="Self.Provider" Multiplicity="1" />
           <End Role="ProviderOrder" Type="Self.ProviderOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -932,7 +967,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProviderO__Provi__787EE5A0">
+        <Association Name="FK__ProviderO__Provi__797309D9">
           <End Role="ProviderOrder" Type="Self.ProviderOrder" Multiplicity="1" />
           <End Role="ProviderOrderDetail" Type="Self.ProviderOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -944,7 +979,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AppDbContext" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK__Users__RoleID__4BAC3F29">
+          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CafeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Areas" EntityType="Self.Area" />
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -961,83 +1008,88 @@
           <EntitySet Name="ProviderOrders" EntityType="Self.ProviderOrder" />
           <EntitySet Name="ProviderOrderDetails" EntityType="Self.ProviderOrderDetail" />
           <EntitySet Name="Providers" EntityType="Self.Provider" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Sizes" EntityType="Self.Size" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK__CF_Table__AreaID__5AEE82B9" Association="Self.FK__CF_Table__AreaID__5AEE82B9">
+          <AssociationSet Name="FK__CF_Table__AreaID__5BE2A6F2" Association="Self.FK__CF_Table__AreaID__5BE2A6F2">
             <End Role="Area" EntitySet="Areas" />
             <End Role="CF_Table" EntitySet="CF_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__CustomerID__7D439ABD" Association="Self.FK__Bill__CustomerID__7D439ABD">
+          <AssociationSet Name="FK__Bill__CustomerID__7E37BEF6" Association="Self.FK__Bill__CustomerID__7E37BEF6">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__OrderDetai__7C4F7684" Association="Self.FK__Bill__OrderDetai__7C4F7684">
+          <AssociationSet Name="FK__Bill__OrderDetai__7D439ABD" Association="Self.FK__Bill__OrderDetai__7D439ABD">
             <End Role="OrderDetail" EntitySet="OrderDetails" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__UserID__7E37BEF6" Association="Self.FK__Bill__UserID__7E37BEF6">
+          <AssociationSet Name="FK__Bill__UserName__7F2BE32F" Association="Self.FK__Bill__UserName__7F2BE32F">
             <End Role="Users" EntitySet="Users" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Categor__5070F446" Association="Self.FK__Product__Categor__5070F446">
+          <AssociationSet Name="FK__Product__Categor__5FB337D6" Association="Self.FK__Product__Categor__5FB337D6">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__CF_Table__Custom__5BE2A6F2" Association="Self.FK__CF_Table__Custom__5BE2A6F2">
+          <AssociationSet Name="FK__CF_Table__Custom__5CD6CB2B" Association="Self.FK__CF_Table__Custom__5CD6CB2B">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="CF_Table" EntitySet="CF_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK__Orders__TableID__5EBF139D" Association="Self.FK__Orders__TableID__5EBF139D">
+          <AssociationSet Name="FK__Orders__TableID__6383C8BA" Association="Self.FK__Orders__TableID__6383C8BA">
             <End Role="CF_Table" EntitySet="CF_Table" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Customer__Promot__5812160E" Association="Self.FK__Customer__Promot__5812160E">
+          <AssociationSet Name="FK__Customer__Promot__59063A47" Association="Self.FK__Customer__Promot__59063A47">
             <End Role="Promotion" EntitySet="Promotions" />
             <End Role="Customer" EntitySet="Customers" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductIn__Ingre__6EF57B66" Association="Self.FK__ProductIn__Ingre__6EF57B66">
+          <AssociationSet Name="FK__ProductIn__Ingre__6FE99F9F" Association="Self.FK__ProductIn__Ingre__6FE99F9F">
             <End Role="Ingredient" EntitySet="Ingredients" />
             <End Role="ProductIngredient" EntitySet="ProductIngredients" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProvideDe__Ingre__72C60C4A" Association="Self.FK__ProvideDe__Ingre__72C60C4A">
+          <AssociationSet Name="FK__ProvideDe__Ingre__73BA3083" Association="Self.FK__ProvideDe__Ingre__73BA3083">
             <End Role="Ingredient" EntitySet="Ingredients" />
             <End Role="ProvideDetail" EntitySet="ProvideDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Ingre__797309D9" Association="Self.FK__ProviderO__Ingre__797309D9">
+          <AssociationSet Name="FK__ProviderO__Ingre__7A672E12" Association="Self.FK__ProviderO__Ingre__7A672E12">
             <End Role="Ingredient" EntitySet="Ingredients" />
             <End Role="ProviderOrderDetail" EntitySet="ProviderOrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__LoginHist__UserI__01142BA1" Association="Self.FK__LoginHist__UserI__01142BA1">
+          <AssociationSet Name="FK__LoginHist__Usern__4E88ABD4" Association="Self.FK__LoginHist__Usern__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="LoginHistory" EntitySet="LoginHistories" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Order__628FA481" Association="Self.FK__OrderDeta__Order__628FA481">
+          <AssociationSet Name="FK__OrderDeta__Order__6754599E" Association="Self.FK__OrderDeta__Order__6754599E">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDeta__Produ__619B8048" Association="Self.FK__OrderDeta__Produ__619B8048">
+          <AssociationSet Name="FK__OrderDeta__Produ__66603565" Association="Self.FK__OrderDeta__Produ__66603565">
             <End Role="Product" EntitySet="Products" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__SizeID__5165187F" Association="Self.FK__Product__SizeID__5165187F">
+          <AssociationSet Name="FK__Product__SizeID__60A75C0F" Association="Self.FK__Product__SizeID__60A75C0F">
             <End Role="Size" EntitySet="Sizes" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProductIn__Produ__6E01572D" Association="Self.FK__ProductIn__Produ__6E01572D">
+          <AssociationSet Name="FK__ProductIn__Produ__6EF57B66" Association="Self.FK__ProductIn__Produ__6EF57B66">
             <End Role="Product" EntitySet="Products" />
             <End Role="ProductIngredient" EntitySet="ProductIngredients" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProvideDe__Provi__71D1E811" Association="Self.FK__ProvideDe__Provi__71D1E811">
+          <AssociationSet Name="FK__ProvideDe__Provi__72C60C4A" Association="Self.FK__ProvideDe__Provi__72C60C4A">
             <End Role="Providers" EntitySet="Providers" />
             <End Role="ProvideDetail" EntitySet="ProvideDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Provi__75A278F5" Association="Self.FK__ProviderO__Provi__75A278F5">
+          <AssociationSet Name="FK__ProviderO__Provi__76969D2E" Association="Self.FK__ProviderO__Provi__76969D2E">
             <End Role="Providers" EntitySet="Providers" />
             <End Role="ProviderOrder" EntitySet="ProviderOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK__ProviderO__Provi__787EE5A0" Association="Self.FK__ProviderO__Provi__787EE5A0">
+          <AssociationSet Name="FK__ProviderO__Provi__797309D9" Association="Self.FK__ProviderO__Provi__797309D9">
             <End Role="ProviderOrder" EntitySet="ProviderOrders" />
             <End Role="ProviderOrderDetail" EntitySet="ProviderOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__RoleID__4BAC3F29" Association="Self.FK__Users__RoleID__4BAC3F29">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1045,9 +1097,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CAFESHOPModelStoreContainer" CdmEntityContainer="AppDbContext">
+        <EntityContainerMapping StorageEntityContainer="CafeModelStoreContainer" CdmEntityContainer="CafeEntities">
           <EntitySetMapping Name="Areas">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Area">
+            <EntityTypeMapping TypeName="CafeModel.Area">
               <MappingFragment StoreEntitySet="Area">
                 <ScalarProperty Name="AreaID" ColumnName="AreaID" />
                 <ScalarProperty Name="AreaName" ColumnName="AreaName" />
@@ -1055,11 +1107,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Bills">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Bill">
+            <EntityTypeMapping TypeName="CafeModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
                 <ScalarProperty Name="BillID" ColumnName="BillID" />
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
@@ -1068,7 +1120,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Category">
+            <EntityTypeMapping TypeName="CafeModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -1077,7 +1129,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CF_Table">
-            <EntityTypeMapping TypeName="CAFESHOPModel.CF_Table">
+            <EntityTypeMapping TypeName="CafeModel.CF_Table">
               <MappingFragment StoreEntitySet="CF_Table">
                 <ScalarProperty Name="TableID" ColumnName="TableID" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
@@ -1088,7 +1140,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Customer">
+            <EntityTypeMapping TypeName="CafeModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
@@ -1099,7 +1151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ingredients">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Ingredient">
+            <EntityTypeMapping TypeName="CafeModel.Ingredient">
               <MappingFragment StoreEntitySet="Ingredient">
                 <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
                 <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
@@ -1110,17 +1162,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoginHistories">
-            <EntityTypeMapping TypeName="CAFESHOPModel.LoginHistory">
+            <EntityTypeMapping TypeName="CafeModel.LoginHistory">
               <MappingFragment StoreEntitySet="LoginHistory">
                 <ScalarProperty Name="LoginHistoryID" ColumnName="LoginHistoryID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
                 <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="CAFESHOPModel.OrderDetail">
+            <EntityTypeMapping TypeName="CafeModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -1131,7 +1183,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Order">
+            <EntityTypeMapping TypeName="CafeModel.Order">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="TableID" ColumnName="TableID" />
@@ -1141,7 +1193,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Product">
+            <EntityTypeMapping TypeName="CafeModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
@@ -1153,7 +1205,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductIngredients">
-            <EntityTypeMapping TypeName="CAFESHOPModel.ProductIngredient">
+            <EntityTypeMapping TypeName="CafeModel.ProductIngredient">
               <MappingFragment StoreEntitySet="ProductIngredient">
                 <ScalarProperty Name="ProductIngredientID" ColumnName="ProductIngredientID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -1163,7 +1215,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Promotions">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Promotion">
+            <EntityTypeMapping TypeName="CafeModel.Promotion">
               <MappingFragment StoreEntitySet="Promotion">
                 <ScalarProperty Name="PromotionID" ColumnName="PromotionID" />
                 <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
@@ -1174,7 +1226,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProvideDetails">
-            <EntityTypeMapping TypeName="CAFESHOPModel.ProvideDetail">
+            <EntityTypeMapping TypeName="CafeModel.ProvideDetail">
               <MappingFragment StoreEntitySet="ProvideDetail">
                 <ScalarProperty Name="ProvideDetailID" ColumnName="ProvideDetailID" />
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
@@ -1185,7 +1237,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProviderOrders">
-            <EntityTypeMapping TypeName="CAFESHOPModel.ProviderOrder">
+            <EntityTypeMapping TypeName="CafeModel.ProviderOrder">
               <MappingFragment StoreEntitySet="ProviderOrder">
                 <ScalarProperty Name="ProviderOrderID" ColumnName="ProviderOrderID" />
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
@@ -1196,7 +1248,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProviderOrderDetails">
-            <EntityTypeMapping TypeName="CAFESHOPModel.ProviderOrderDetail">
+            <EntityTypeMapping TypeName="CafeModel.ProviderOrderDetail">
               <MappingFragment StoreEntitySet="ProviderOrderDetail">
                 <ScalarProperty Name="ProviderOrderDetailID" ColumnName="ProviderOrderDetailID" />
                 <ScalarProperty Name="ProviderOrderID" ColumnName="ProviderOrderID" />
@@ -1207,7 +1259,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Providers">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Provider">
+            <EntityTypeMapping TypeName="CafeModel.Provider">
               <MappingFragment StoreEntitySet="Providers">
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
                 <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
@@ -1216,8 +1268,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="CafeModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Sizes">
-            <EntityTypeMapping TypeName="CAFESHOPModel.Size">
+            <EntityTypeMapping TypeName="CafeModel.Size">
               <MappingFragment StoreEntitySet="Size">
                 <ScalarProperty Name="SizeID" ColumnName="SizeID" />
                 <ScalarProperty Name="SizeName" ColumnName="SizeName" />
@@ -1226,13 +1286,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="CAFESHOPModel.User">
+            <EntityTypeMapping TypeName="CafeModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Userpassword" ColumnName="Userpassword" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -7,19 +7,35 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AppDbContext : DbContext
+    public partial class CafeEntities : DbContext
     {
-        public AppDbContext()
-            : base("name=AppDbContext")
+        private static CafeEntities instance;
+        public static CafeEntities Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CafeEntities();
+                }
+                return instance;
+            }
+            set
+            {
+                instance = value;
+            }
+        }
+        public CafeEntities()
+            : base("name=CafeEntities")
         {
         }
-    
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -41,6 +57,7 @@ namespace DAL.Models
         public virtual DbSet<ProviderOrder> ProviderOrders { get; set; }
         public virtual DbSet<ProviderOrderDetail> ProviderOrderDetails { get; set; }
         public virtual DbSet<Provider> Providers { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

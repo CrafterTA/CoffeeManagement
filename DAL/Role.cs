@@ -7,28 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderDetail
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OrderDetail()
+        public Role()
         {
-            this.Bills = new HashSet<Bill>();
+            this.Users = new HashSet<User>();
         }
     
-        public int OrderDetailID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> OrderID { get; set; }
-        public int Quantity { get; set; }
-        public decimal Price { get; set; }
+        public string RoleID { get; set; }
+        public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

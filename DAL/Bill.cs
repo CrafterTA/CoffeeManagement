@@ -7,18 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL.Models
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class LoginHistory
+    public partial class Bill
     {
-        public int LoginHistoryID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public System.DateTime LoginTime { get; set; }
-        public Nullable<System.DateTime> LogoutTime { get; set; }
+        public string BillID { get; set; }
+        public string OrderDetailID { get; set; }
+        public string UserName { get; set; }
+        public string CustomerID { get; set; }
+        public decimal TotalAmount { get; set; }
+        public System.DateTime PaymentDate { get; set; }
+        public string PaymentStatus { get; set; }
     
+        public virtual Customer Customer { get; set; }
+        public virtual OrderDetail OrderDetail { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class fAddCategory
+    partial class fAddProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -47,6 +47,16 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).BeginInit();
@@ -58,10 +68,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textBox5);
+            this.layoutControl1.Controls.Add(this.textBox4);
+            this.layoutControl1.Controls.Add(this.textBox3);
+            this.layoutControl1.Controls.Add(this.textBox2);
+            this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.dgvCRUD);
             this.layoutControl1.Controls.Add(this.btnUpdate);
             this.layoutControl1.Controls.Add(this.btnDelete);
@@ -75,7 +95,7 @@
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1108, 354, 812, 500);
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(1167, 680);
-            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // dgvCRUD
@@ -88,12 +108,12 @@
             this.CategoryID,
             this.CategoryName,
             this.Description});
-            this.dgvCRUD.Location = new System.Drawing.Point(12, 101);
+            this.dgvCRUD.Location = new System.Drawing.Point(12, 159);
             this.dgvCRUD.Name = "dgvCRUD";
             this.dgvCRUD.ReadOnly = true;
             this.dgvCRUD.RowHeadersWidth = 51;
             this.dgvCRUD.RowTemplate.Height = 24;
-            this.dgvCRUD.Size = new System.Drawing.Size(1143, 567);
+            this.dgvCRUD.Size = new System.Drawing.Size(1143, 480);
             this.dgvCRUD.TabIndex = 10;
             // 
             // CategoryID
@@ -119,53 +139,50 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(391, 70);
+            this.btnUpdate.Location = new System.Drawing.Point(391, 128);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(377, 27);
             this.btnUpdate.StyleController = this.layoutControl1;
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(772, 70);
+            this.btnDelete.Location = new System.Drawing.Point(772, 128);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(383, 27);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(12, 70);
+            this.btnInsert.Location = new System.Drawing.Point(12, 128);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(375, 27);
             this.btnInsert.StyleController = this.layoutControl1;
             this.btnInsert.TabIndex = 7;
             this.btnInsert.Text = "Thêm";
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(111, 41);
+            this.txtDescription.Location = new System.Drawing.Point(139, 70);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(1044, 25);
+            this.txtDescription.Size = new System.Drawing.Size(1016, 25);
             this.txtDescription.TabIndex = 6;
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(684, 12);
+            this.txtCategoryName.Location = new System.Drawing.Point(139, 41);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(471, 25);
+            this.txtCategoryName.Size = new System.Drawing.Size(442, 25);
             this.txtCategoryName.TabIndex = 5;
             // 
             // txtCategoryID
             // 
-            this.txtCategoryID.Location = new System.Drawing.Point(111, 12);
+            this.txtCategoryID.Location = new System.Drawing.Point(139, 12);
             this.txtCategoryID.Name = "txtCategoryID";
-            this.txtCategoryID.Size = new System.Drawing.Size(470, 25);
+            this.txtCategoryID.Size = new System.Drawing.Size(442, 25);
             this.txtCategoryID.TabIndex = 4;
             // 
             // Root
@@ -174,12 +191,17 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
+            this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem2});
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem11,
+            this.layoutControlItem12});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1167, 680);
             this.Root.TextVisible = false;
@@ -191,30 +213,30 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(573, 29);
             this.layoutControlItem1.Text = "Mã danh mục:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(87, 16);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(115, 16);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtCategoryName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(573, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 29);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(574, 29);
+            this.layoutControlItem2.Size = new System.Drawing.Size(573, 29);
             this.layoutControlItem2.Text = "Tên danh mục:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 16);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(115, 16);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtDescription;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 29);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(1147, 29);
             this.layoutControlItem3.Text = "Mô tả:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 16);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(115, 16);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnInsert;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 58);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(379, 31);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -223,7 +245,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnDelete;
-            this.layoutControlItem5.Location = new System.Drawing.Point(760, 58);
+            this.layoutControlItem5.Location = new System.Drawing.Point(760, 116);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(387, 31);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -232,7 +254,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnUpdate;
-            this.layoutControlItem6.Location = new System.Drawing.Point(379, 58);
+            this.layoutControlItem6.Location = new System.Drawing.Point(379, 116);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(381, 31);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -241,21 +263,95 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.dgvCRUD;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 89);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 147);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1147, 571);
+            this.layoutControlItem7.Size = new System.Drawing.Size(1147, 484);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // fAddCategory
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(139, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(442, 25);
+            this.textBox1.TabIndex = 11;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.textBox1;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 87);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(573, 29);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(115, 16);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(712, 99);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(443, 25);
+            this.textBox2.TabIndex = 12;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.textBox2;
+            this.layoutControlItem9.Location = new System.Drawing.Point(573, 87);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(574, 29);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(115, 16);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(139, 643);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(1016, 25);
+            this.textBox3.TabIndex = 13;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.textBox3;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 631);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(1147, 29);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(115, 16);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(712, 12);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(443, 25);
+            this.textBox4.TabIndex = 14;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.textBox4;
+            this.layoutControlItem11.Location = new System.Drawing.Point(573, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(574, 29);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(115, 16);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(712, 41);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(443, 25);
+            this.textBox5.TabIndex = 15;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.textBox5;
+            this.layoutControlItem12.Location = new System.Drawing.Point(573, 29);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(574, 29);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(115, 16);
+            // 
+            // fAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 680);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "fAddCategory";
-            this.Text = "fAddCategory";
-            this.Load += new System.EventHandler(this.fAddCategory_Load);
+            this.Name = "fAddProduct";
+            this.Text = "fAddProduct";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCRUD)).EndInit();
@@ -267,6 +363,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,14 +375,17 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private System.Windows.Forms.DataGridView dgvCRUD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnInsert;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TextBox txtCategoryID;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -289,8 +393,15 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

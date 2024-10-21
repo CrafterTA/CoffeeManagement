@@ -71,11 +71,23 @@
     <Compile Include="fAddCategory.Designer.cs">
       <DependentUpon>fAddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddProduct.Designer.cs">
+      <DependentUpon>fAddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAddRole.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fAddRole.Designer.cs">
       <DependentUpon>fAddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAddSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddSize.Designer.cs">
+      <DependentUpon>fAddSize.cs</DependentUpon>
     </Compile>
     <Compile Include="fAddUser.cs">
       <SubType>Form</SubType>
@@ -100,8 +112,14 @@
     <EmbeddedResource Include="fAddCategory.resx">
       <DependentUpon>fAddCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fAddProduct.resx">
+      <DependentUpon>fAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAddRole.resx">
       <DependentUpon>fAddRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddSize.resx">
+      <DependentUpon>fAddSize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAddUser.resx">
       <DependentUpon>fAddUser.cs</DependentUpon>

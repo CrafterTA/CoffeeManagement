@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,25 @@ namespace BUS
             }
             set => _instance = value;
         }
+        public List<Category> GetAllCategories()
+        {
+            return DALCategory.Instance.GetAllCategories();
+        }
+        public Category GetCategoryByID(string categoryID)
+        {
+            return DALCategory.Instance.GetCategoryByID(categoryID);
+        }
+        public bool AddCategory(string categoryID, string categoryName, string description)
+        {
+            return DALCategory.Instance.AddCategory(categoryID, categoryName, description);
+        }
+        public bool UpdateCategory(Category categories)
+        {
+            return DALCategory.Instance.UpdateCategory(categories);
+        }
+        public bool DeleteCategory(string categoryID) {
+            return DALCategory.Instance.DeleteCategory(categoryID);
+        }
+
     }
 }

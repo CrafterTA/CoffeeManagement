@@ -84,6 +84,8 @@
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DALCategory.cs" />
+    <Compile Include="DALIngredient.cs" />
+    <Compile Include="DALProduct.cs" />
     <Compile Include="DALRole.cs" />
     <Compile Include="DALSize.cs" />
     <Compile Include="DALUser.cs" />

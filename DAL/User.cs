@@ -18,7 +18,6 @@ namespace DAL
         public User()
         {
             this.Bills = new HashSet<Bill>();
-            this.LoginHistories = new HashSet<LoginHistory>();
         }
     
         public string UserName { get; set; }
@@ -30,8 +29,6 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LoginHistory> LoginHistories { get; set; }
         public virtual Role Role { get; set; }
     }
 }

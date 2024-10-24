@@ -15,20 +15,16 @@ namespace DAL
     
     public partial class CafeEntities : DbContext
     {
-        private static CafeEntities instance;
+        private static CafeEntities _instance;
         public static CafeEntities Instance
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new CafeEntities();
+                    _instance = new CafeEntities();
                 }
-                return instance;
-            }
-            set
-            {
-                instance = value;
+                return _instance;
             }
         }
         public CafeEntities()
@@ -45,18 +41,10 @@ namespace DAL
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CF_Table> CF_Table { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Ingredient> Ingredients { get; set; }
-        public virtual DbSet<LoginHistory> LoginHistories { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductIngredient> ProductIngredients { get; set; }
-        public virtual DbSet<Promotion> Promotions { get; set; }
-        public virtual DbSet<ProvideDetail> ProvideDetails { get; set; }
-        public virtual DbSet<ProviderOrder> ProviderOrders { get; set; }
-        public virtual DbSet<ProviderOrderDetail> ProviderOrderDetails { get; set; }
-        public virtual DbSet<Provider> Providers { get; set; }
+        public virtual DbSet<ProductSize> ProductSizes { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<User> Users { get; set; }

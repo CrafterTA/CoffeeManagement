@@ -17,12 +17,10 @@ namespace DAL
         public string BillID { get; set; }
         public string OrderDetailID { get; set; }
         public string UserName { get; set; }
-        public string CustomerID { get; set; }
         public decimal TotalAmount { get; set; }
         public System.DateTime PaymentDate { get; set; }
         public string PaymentStatus { get; set; }
     
-        public virtual Customer Customer { get; set; }
         public virtual OrderDetail OrderDetail { get; set; }
         public virtual User User { get; set; }
     }

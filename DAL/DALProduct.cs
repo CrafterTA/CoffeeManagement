@@ -35,7 +35,7 @@ namespace DAL
                     ProductID = productID,
                     ProductName = productName,
                     CategoryID = categoryID,
-                    SizeID = sizeID,
+                   
                     Description = description,
                     Image = image
                 };

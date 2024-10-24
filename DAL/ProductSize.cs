@@ -12,21 +12,21 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Promotion
+    public partial class ProductSize
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Promotion()
+        public ProductSize()
         {
-            this.Customers = new HashSet<Customer>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public string PromotionID { get; set; }
-        public string PromotionName { get; set; }
-        public Nullable<decimal> DiscountAmount { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
+        public string ProductSizeID { get; set; }
+        public string SizeName { get; set; }
+        public string ProductID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Size Size { get; set; }
     }
 }

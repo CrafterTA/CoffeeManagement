@@ -17,14 +17,13 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Size()
         {
-            this.Products = new HashSet<Product>();
+            this.ProductSizes = new HashSet<ProductSize>();
         }
     
-        public string SizeID { get; set; }
         public string SizeName { get; set; }
-        public Nullable<decimal> AdditionalPrice { get; set; }
+        public Nullable<decimal> SizePrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ProductSize> ProductSizes { get; set; }
     }
 }

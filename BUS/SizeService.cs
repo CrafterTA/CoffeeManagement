@@ -24,13 +24,13 @@ namespace BUS
         {
             return DALSize.Instance.GetAllSizes();
         }
-        public Size GetSizeByID(string sizeID)
+        public Size GetSizeByName(string sizeName)
         {
-            return DALSize.Instance.GetSizeByID(sizeID);
+            return DALSize.Instance.GetSizeByID(sizeName);
         }
-        public bool AddSize(string sizeID, string sizeName, decimal additionalPrice)
+        public bool AddSize(string sizeName, decimal sizePrice)
         {
-            return DALSize.Instance.AddSize(sizeID, sizeName, additionalPrice);
+            return DALSize.Instance.AddSize( sizeName, sizePrice);
         }
         public bool UpdateSize(Size sizes)
         {

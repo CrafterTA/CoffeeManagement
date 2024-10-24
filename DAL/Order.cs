@@ -21,9 +21,10 @@ namespace DAL
         }
     
         public string OrderID { get; set; }
-        public string TableID { get; set; }
-        public System.DateTime OrderDate { get; set; }
+        public System.DateTime DateCheckIn { get; set; }
+        public Nullable<System.DateTime> DateCheckOut { get; set; }
         public string Status { get; set; }
+        public string TableID { get; set; }
     
         public virtual CF_Table CF_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

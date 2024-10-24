@@ -23,11 +23,9 @@ namespace DAL
         public string TableID { get; set; }
         public string TableName { get; set; }
         public string AreaID { get; set; }
-        public string CustomerID { get; set; }
         public string Status { get; set; }
     
         public virtual Area Area { get; set; }
-        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
     }

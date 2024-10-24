@@ -23,18 +23,17 @@ namespace DAL
         {
             return CafeEntities.Instance.Sizes.ToList();
         }
-        public Size GetSizeByID(string sizeID)
+        public Size GetSizeByID(string sizeName)
         {
-            return CafeEntities.Instance.Sizes.Find(sizeID);
+            return CafeEntities.Instance.Sizes.Find(sizeName);
         }
-        public bool AddSize(string sizeID, string sizeName, decimal additionalPrice)
+        public bool AddSize(string sizeName, decimal sizePrice)
         {
             try
             {
                 var obj = new Size();
-                obj.SizeID = sizeID;
                 obj.SizeName = sizeName;
-                obj.AdditionalPrice = additionalPrice;
+                obj.SizePrice = sizePrice;
                 CafeEntities.Instance.Sizes.Add(obj);
                 CafeEntities.Instance.SaveChanges();
                 return true;
@@ -49,11 +48,10 @@ namespace DAL
         {
             try
             {
-                var obj = GetSizeByID(sizes.SizeID);
+                var obj = GetSizeByID(sizes.SizeName);
                 if (obj != null)
                 {
-                    obj.SizeName = sizes.SizeName;
-                    obj.AdditionalPrice = sizes.AdditionalPrice;
+                    obj.SizePrice = sizes.SizePrice;
                     CafeEntities.Instance.SaveChanges();
                     return true;
                 }
@@ -65,11 +63,11 @@ namespace DAL
                 return false;
             }
         }
-        public bool DeleteSize(string sizeID)
+        public bool DeleteSize(string sizeName)
         {
             try
             {
-                var obj = GetSizeByID(sizeID);
+                var obj = GetSizeByID(sizeName);
                 if (obj != null)
                 {
                     CafeEntities.Instance.Sizes.Remove(obj);

@@ -19,7 +19,6 @@
           <Property Name="BillID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="OrderDetailID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PaymentDate" Type="datetime" Nullable="false" />
           <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -68,7 +67,7 @@
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="varchar" MaxLength="10" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
-          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+          <Property Name="Images" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="ProductSize">
           <Key>
@@ -296,7 +295,6 @@
           <Property Name="BillID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OrderDetailID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="OrderDetail" Relationship="Self.FK__Bill__OrderDetai__656C112C" FromRole="Bill" ToRole="OrderDetail" />
@@ -355,7 +353,7 @@
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CategoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__5EBF139D" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ProductSizes" Relationship="Self.FK__ProductSi__Produ__60A75C0F" FromRole="Product" ToRole="ProductSize" />
         </EntityType>
@@ -592,7 +590,6 @@
                 <ScalarProperty Name="BillID" ColumnName="BillID" />
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
                 <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
               </MappingFragment>
@@ -646,7 +643,7 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

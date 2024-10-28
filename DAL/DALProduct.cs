@@ -26,7 +26,7 @@ namespace DAL
         {
             return CafeEntities.Instance.Products.Find(productID);
         }
-        public bool AddProduct(string productID, string productName, string categoryID, string sizeID, string description, string image)
+        public bool AddProduct(string productID, string productName, string categoryID, string sizeID,decimal price, string description, string image)
         {
             try
             {
@@ -35,9 +35,9 @@ namespace DAL
                     ProductID = productID,
                     ProductName = productName,
                     CategoryID = categoryID,
-                   
+                    Price = price,
                     Description = description,
-                    Image = image
+                    Images = image
                 };
                 CafeEntities.Instance.Products.Add(product);
                 CafeEntities.Instance.SaveChanges();
@@ -55,9 +55,9 @@ namespace DAL
                 var itu = CafeEntities.Instance.Products.Find(product.ProductID);
                 itu.ProductName = product.ProductName;
                 itu.CategoryID = product.CategoryID;
-                itu.SizeID = product.SizeID;
+                itu.Price = product.Price;
                 itu.Description = product.Description;
-                itu.Image = product.Image;
+                itu.Images = product.Images;
                 CafeEntities.Instance.SaveChanges();
                 return true;
             }
@@ -79,6 +79,11 @@ namespace DAL
             {
                 return false;
             }
+        }
+
+        public bool AddProduct(string productID, string productName, string categoryID, decimal price, string description, string image)
+        {
+            throw new NotImplementedException();
         }
     }
 }

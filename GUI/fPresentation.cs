@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fDashboard : Form
+    public partial class fPresentation : Form
     {
-        public fDashboard()
+        public fPresentation()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void fPresentation_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            siticoneShadowForm1.SetShadowForm(this);
         }
-
-        
     }
 }

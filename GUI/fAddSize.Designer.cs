@@ -139,7 +139,7 @@
             this.btnUpdate.StyleController = this.layoutControl1;
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            
             // 
             // btnAdd
             // 
@@ -149,7 +149,7 @@
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Thêm";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            
             // 
             // btnDelete
             // 
@@ -159,7 +159,7 @@
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            
             // 
             // txtSizeID
             // 

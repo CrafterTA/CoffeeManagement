@@ -27,9 +27,9 @@ namespace BUS
         {
             return DALProduct.Instance.GetProductByID(productID);
         }
-        public bool AddProduct(string productID, string productName, string categoryID, string sizeID, string description, string image)
+        public bool AddProduct(string productID, string productName, string categoryID, decimal price, string description, string image)
         {
-            return DALProduct.Instance.AddProduct(productID, productName, categoryID, sizeID, description, image);
+            return DALProduct.Instance.AddProduct(productID, productName, categoryID,price, description, image);
         }
         public bool UpdateProduct(Product product)
         {

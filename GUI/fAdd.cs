@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fDashboard : Form
+    public partial class fAdd : Form
     {
-        public fDashboard()
+        public fAdd()
         {
             InitializeComponent();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        
     }
 }

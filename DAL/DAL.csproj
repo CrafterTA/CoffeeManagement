@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Siticone.Desktop.UI.2.1.1\lib\net40\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -80,11 +83,12 @@
     <Compile Include="CF_Table.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DALBill.cs" />
     <Compile Include="DALCategory.cs" />
-    <Compile Include="DALIngredient.cs" />
     <Compile Include="DALProduct.cs" />
     <Compile Include="DALRole.cs" />
     <Compile Include="DALSize.cs" />
+    <Compile Include="DALTable.cs" />
     <Compile Include="DALUser.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>

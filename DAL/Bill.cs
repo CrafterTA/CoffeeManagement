@@ -17,7 +17,6 @@ namespace DAL
         public string BillID { get; set; }
         public string OrderDetailID { get; set; }
         public string UserName { get; set; }
-        public decimal TotalAmount { get; set; }
         public System.DateTime PaymentDate { get; set; }
         public string PaymentStatus { get; set; }
     

@@ -39,9 +39,9 @@ namespace GUI
             foreach (var item in listSize)
             {
                 int index = dgvCRUD.Rows.Add();
-                dgvCRUD.Rows[index].Cells[0].Value = item.SizeID;
+                
                 dgvCRUD.Rows[index].Cells[1].Value = item.SizeName;
-                dgvCRUD.Rows[index].Cells[2].Value = item.AdditionalPrice;
+                dgvCRUD.Rows[index].Cells[2].Value = item.SizePrice;
             }
         }
 
@@ -55,14 +55,15 @@ namespace GUI
             dgvCRUD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        /*private void btnAdd_Click(object sender, EventArgs e)
         {
-            string sizeID = txtSizeID.Text;
+            
             string sizeName = txtSizeName.Text;
+            //decimal sizePrice = Convert.ToDecimal(txtSizePrice.Text);
             decimal additionalprice = Convert.ToDecimal(txtAdditionalPrice.Text);
             try
             {
-                if (SizeService.Instance.AddSize(sizeID, sizeName, additionalprice))
+                if (SizeService.Instance.AddSize( sizeName, sizePrice))
                 {
                     MessageBox.Show("Thêm dữ liệu thành công");
                     BindGrid(SizeService.Instance.GetAllSizes());
@@ -101,6 +102,6 @@ namespace GUI
             {
                 MessageBox.Show("Xóa dữ liệu thất bại");
             }
-        }
+        }*/
     }
 }

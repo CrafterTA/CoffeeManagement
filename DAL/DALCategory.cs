@@ -83,6 +83,11 @@ namespace DAL
                 return false;
             }
         }
+        public List<Category> SearchCategory(string keyword)
+        {
+            keyword = keyword.ToLower().Trim();
+            return CafeEntities.Instance.Categories.Where(c => c.CategoryID.ToLower().Contains(keyword) || c.CategoryName.ToLower().Contains(keyword)).ToList();
+        }
 
     }
 

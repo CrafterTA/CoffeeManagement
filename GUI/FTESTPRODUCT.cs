@@ -21,7 +21,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void FTESTPRODUCT_Load(object sender, EventArgs e)
+        /*private void FTESTPRODUCT_Load(object sender, EventArgs e)
         {
             products = ProductService.Instance.GetAllProducts();
             categories = CategoryService.Instance.GetAllCategories();
@@ -90,6 +90,6 @@ namespace GUI
 
             // Cập nhật danh sách sản phẩm hiển thị
             DisplayProducts(filteredProducts);
-        }
+        } */
     }
 }

@@ -46,7 +46,7 @@
             this.comboBoxCategories.Name = "comboBoxCategories";
             this.comboBoxCategories.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCategories.TabIndex = 1;
-            this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
+            
             // 
             // FTESTPRODUCT
             // 
@@ -57,7 +57,7 @@
             this.Controls.Add(this.flpProducts);
             this.Name = "FTESTPRODUCT";
             this.Text = "FTESTPRODUCT";
-            this.Load += new System.EventHandler(this.FTESTPRODUCT_Load);
+           
             this.ResumeLayout(false);
 
         }

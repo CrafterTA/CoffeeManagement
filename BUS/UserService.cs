@@ -39,6 +39,10 @@ namespace BUS
         {
             return DALUser.Instance.DeleteUser(username);
         }
+        public List<User> SearchUser(string keyword)
+        {
+            return DALUser.Instance.SearchUser(keyword);
+        }
 
 
 

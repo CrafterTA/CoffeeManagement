@@ -39,5 +39,9 @@ namespace BUS
         {
             return DALRole.Instance.DeleteRole(ID);
         }
+        public List<Role> SearchRole(string keyword)
+        {
+            return DALRole.Instance.SearchRole(keyword);
+        }
     }
 }

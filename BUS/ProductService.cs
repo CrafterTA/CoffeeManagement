@@ -27,7 +27,7 @@ namespace BUS
         {
             return DALProduct.Instance.GetProductByID(productID);
         }
-        public bool AddProduct(string productID, string productName, string categoryID, decimal price, string description, string image)
+        public bool AddProduct(string productID, string productName, string categoryID, decimal price, string description, byte[] image)
         {
             return DALProduct.Instance.AddProduct(productID, productName, categoryID,price, description, image);
         }
@@ -38,6 +38,10 @@ namespace BUS
         public bool DeleteProduct(string productID)
         {
             return DALProduct.Instance.DeleteProduct(productID);
+        }
+        public List<Product> SearchProduct(string search)
+        {
+            return DALProduct.Instance.SearchProduct(search);
         }
     }
 }

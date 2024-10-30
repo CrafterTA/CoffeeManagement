@@ -38,6 +38,10 @@ namespace BUS
         public bool DeleteCategory(string categoryID) {
             return DALCategory.Instance.DeleteCategory(categoryID);
         }
+        public List<Category> SearchCategory(string keyword)
+        {
+            return DALCategory.Instance.SearchCategory(keyword);
+        }
 
     }
 }

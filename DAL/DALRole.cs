@@ -82,5 +82,14 @@ namespace DAL
                 return false;
             }
         }
+        public List<Role> SearchRole(string keyword)
+        {
+            keyword = keyword.ToLower().Trim();
+            return CafeEntities.Instance.Roles
+                .Where(c => c.RoleID.ToLower().Contains(keyword)
+                         || c.RoleName.ToLower().Contains(keyword))
+                .ToList();
+        }
+            
     }
 }

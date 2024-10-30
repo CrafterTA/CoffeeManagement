@@ -223,9 +223,49 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap homeimage {
+            get {
+                object obj = ResourceManager.GetObject("homeimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homeimage1 {
+            get {
+                object obj = ResourceManager.GetObject("homeimage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nathan_dumlao_cb_ppfNXLSU_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("nathan-dumlao-cb_ppfNXLSU-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nathan_dumlao_cb_ppfNXLSU_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("nathan-dumlao-cb_ppfNXLSU-unsplash1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

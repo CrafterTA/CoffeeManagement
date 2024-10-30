@@ -26,7 +26,7 @@ namespace DAL
         {
             return CafeEntities.Instance.Products.Find(productID);
         }
-        public bool AddProduct(string productID, string productName, string categoryID, string sizeID,decimal price, string description, string image)
+        public bool AddProduct(string productID, string productName, string categoryID,decimal price, string description, byte[] image)
         {
             try
             {
@@ -53,6 +53,11 @@ namespace DAL
             try
             {
                 var itu = CafeEntities.Instance.Products.Find(product.ProductID);
+                if (itu == null)
+                {
+                    
+                    return false;
+                }
                 itu.ProductName = product.ProductName;
                 itu.CategoryID = product.CategoryID;
                 itu.Price = product.Price;
@@ -80,10 +85,15 @@ namespace DAL
                 return false;
             }
         }
-
-        public bool AddProduct(string productID, string productName, string categoryID, decimal price, string description, string image)
+        public List<Product> SearchProduct(string keyword)
         {
-            throw new NotImplementedException();
+            keyword = keyword.ToLower().Trim();
+            return CafeEntities.Instance.Products
+                .Where(c => c.ProductID.ToLower().Contains(keyword)
+                         || c.ProductName.ToLower().Contains(keyword)
+                         || c.Price.ToString().Contains(keyword))
+                .ToList();
         }
+
     }
 }

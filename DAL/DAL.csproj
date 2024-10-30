@@ -83,6 +83,7 @@
     <Compile Include="CF_Table.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DALArea.cs" />
     <Compile Include="DALBill.cs" />
     <Compile Include="DALCategory.cs" />
     <Compile Include="DALProduct.cs" />
@@ -112,12 +113,6 @@
     <Compile Include="User.cs">
       <DependentUpon>AppDbContext.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{AC46D151-5D74-4B41-9A15-02467B2942E8}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

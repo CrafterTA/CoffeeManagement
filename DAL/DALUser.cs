@@ -91,6 +91,11 @@ namespace DAL
                 return false;
             }
         }
+        public List<User> SearchUser(string keyword)
+        {
+            keyword = keyword.ToLower().Trim();
+            return CafeEntities.Instance.Users.Where(x => x.UserName.Contains(keyword) || x.FullName.Contains(keyword) || x.Phone.Contains(keyword) || x.IdentityCard.Contains(keyword)).ToList();
+        }
 
     }
     

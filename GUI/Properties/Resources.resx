@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nathan-dumlao-cb_ppfNXLSU-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nathan-dumlao-cb_ppfNXLSU-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="category_icon_176162" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\category_icon_176162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,8 +136,8 @@
   <data name="cappucino_hot_drink_coffee_hot_chocolate_drink_cup_drinks_icon_210156" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cappucino_hot_drink_coffee_hot_chocolate_drink_cup_drinks_icon_210156.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table_39455" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table_39455.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="353430-checkbox-edit-pen-pencil_107516" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\353430-checkbox-edit-pen-pencil_107516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +145,8 @@
   <data name="green_tea_cup_hot_drink_drinks_icon_210171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_tea_cup_hot_drink_drinks_icon_210171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cup_coffee_cafe_drink_restaurant_hot_and_cold_icon_2261291" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cup_coffee_cafe_drink_restaurant_hot_and_cold_icon_2261291.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="table_39455" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table_39455.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="size" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\size.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +154,17 @@
   <data name="home_icon-icons.com_73532" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_icon-icons.com_73532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="353430-checkbox-edit-pen-pencil_107516" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\353430-checkbox-edit-pen-pencil_107516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nathan-dumlao-cb_ppfNXLSU-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nathan-dumlao-cb_ppfNXLSU-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="analytics_income_increase_chart_growth_profit_revenue_icon_2326031" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\analytics_income_increase_chart_growth_profit_revenue_icon_2326031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_icon-icons.com_735321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homeimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homeimage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cup_coffee_cafe_drink_restaurant_hot_and_cold_icon_2261291" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cup_coffee_cafe_drink_restaurant_hot_and_cold_icon_2261291.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="remove_delete_exit_close_1545" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\remove_delete_exit_close_1545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,10 +190,13 @@
   <data name="cappucino_hot_drink_coffee_hot_chocolate_drink_cup_drinks_icon_2101561" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cappucino_hot_drink_coffee_hot_chocolate_drink_cup_drinks_icon_2101561.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="analytics_income_increase_chart_growth_profit_revenue_icon_2326031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics_income_increase_chart_growth_profit_revenue_icon_2326031.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="table_40901" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table_40901.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home_icon-icons.com_735321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="homeimage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homeimage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

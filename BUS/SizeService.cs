@@ -40,5 +40,9 @@ namespace BUS
         {
             return DALSize.Instance.DeleteSize(sizeID);
         }
+        public List<Size> SearchSize(string search)
+        {
+            return DALSize.Instance.SearchSize(search);
+        }
     }
 }

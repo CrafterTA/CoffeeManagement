@@ -82,6 +82,10 @@ namespace DAL
                 return false;
             }
         }
+        public List<Size> SearchSize(string sizeName)
+        {
+            return CafeEntities.Instance.Sizes.Where(x => x.SizeName.Contains(sizeName) || x.SizePrice.ToString().Contains(sizeName)).ToList();
+        }
 
     }
 }

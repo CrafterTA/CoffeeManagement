@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GUI
 {
     public partial class fLogin : Form
@@ -23,36 +24,7 @@ namespace GUI
         {
 
         }
-        private void Authorization(string username)
-        {
-            User user = UserService.Instance.GetUserByUsername(username);
-            if (user != null)
-            {
-                string roleID = user.RoleID;
-                switch (roleID)
-                {
-                    case "1":
-                        fDashboard fAdmin = new fDashboard();
-                        this.Hide();
-                        fAdmin.ShowDialog();
-                        this.Show();
-                        break;
-                    case "2":
-                        fDashboard fStaff = new fDashboard();
-                        this.Hide();
-                        fStaff.ShowDialog();
-                        this.Show();
-                        break;
-                    default:
-                        MessageBox.Show("Không có quyền truy cập");
-                        break;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
-            }
-        }
+        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -63,7 +35,10 @@ namespace GUI
             {
                 if (user.Userpassword == password)
                 {
-                    Authorization(username);
+                    MessageBox.Show("Đăng nhập thành công!");
+                    fPresentation mainForm = new fPresentation();
+                    mainForm.Show();
+                    this.Hide();
                 }
                 else
                 {

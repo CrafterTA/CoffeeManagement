@@ -27,14 +27,15 @@ namespace DAL
         {
             return CafeEntities.Instance.CF_Table.Find(tableID);
         }
-        public bool AddTable(string tableID, string tableName, string status)
+        public bool AddTable(string tableID, string tableName, string areaID)
         {
             try
             {
                 var obj = new CF_Table();
                 obj.TableID = tableID;
                 obj.TableName = tableName;
-                obj.Status = status;
+                obj.AreaID = areaID;
+
                 CafeEntities.Instance.CF_Table.Add(obj);
                 CafeEntities.Instance.SaveChanges();
                 return true;
@@ -53,7 +54,6 @@ namespace DAL
                 if (obj != null)
                 {
                     obj.TableName = tables.TableName;
-                    obj.Status = tables.Status;
                     CafeEntities.Instance.SaveChanges();
                     return true;
                 }
@@ -83,6 +83,11 @@ namespace DAL
                 Console.WriteLine(ex.InnerException.ToString());
                 return false;
             }
+        }
+        public List<CF_Table> SearchTable(string keyword)
+        {
+            keyword = keyword.ToLower().Trim();
+            return CafeEntities.Instance.CF_Table.Where(x => x.TableID.Contains(keyword) || x.TableName.Contains(keyword)).ToList();
         }
     }
 }

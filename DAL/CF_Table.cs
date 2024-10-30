@@ -23,7 +23,6 @@ namespace DAL
         public string TableID { get; set; }
         public string TableName { get; set; }
         public string AreaID { get; set; }
-        public string Status { get; set; }
     
         public virtual Area Area { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

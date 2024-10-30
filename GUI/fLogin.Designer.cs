@@ -36,6 +36,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.siticonePasswordValidationTool1 = new Siticone.Desktop.UI.Winforms.SiticonePasswordValidationTool();
+            this.siticoneControlBox2 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            this.siticoneControlBox1 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +95,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(42)))), ((int)(((byte)(30)))));
+            this.panel1.Controls.Add(this.siticoneControlBox2);
+            this.panel1.Controls.Add(this.siticoneControlBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -113,6 +118,27 @@
             this.siticonePasswordValidationTool1.PasswordMaximumLength = ((long)(16));
             this.siticonePasswordValidationTool1.PasswordTextBox = this.txtPassword;
             // 
+            // siticoneControlBox2
+            // 
+            this.siticoneControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox2.ControlBoxType = Siticone.Desktop.UI.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.siticoneControlBox2.FillColor = System.Drawing.Color.White;
+            this.siticoneControlBox2.IconColor = System.Drawing.Color.Black;
+            this.siticoneControlBox2.Location = new System.Drawing.Point(930, 0);
+            this.siticoneControlBox2.Name = "siticoneControlBox2";
+            this.siticoneControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox2.TabIndex = 6;
+            // 
+            // siticoneControlBox1
+            // 
+            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox1.FillColor = System.Drawing.Color.Red;
+            this.siticoneControlBox1.IconColor = System.Drawing.Color.White;
+            this.siticoneControlBox1.Location = new System.Drawing.Point(972, 0);
+            this.siticoneControlBox1.Name = "siticoneControlBox1";
+            this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox1.TabIndex = 7;
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -126,10 +152,12 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLogin";
             this.Load += new System.EventHandler(this.fLogin_Load);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,5 +174,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Siticone.Desktop.UI.Winforms.SiticonePasswordValidationTool siticonePasswordValidationTool1;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
     }
 }

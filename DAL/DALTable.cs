@@ -89,5 +89,9 @@ namespace DAL
             keyword = keyword.ToLower().Trim();
             return CafeEntities.Instance.CF_Table.Where(x => x.TableID.Contains(keyword) || x.TableName.Contains(keyword)).ToList();
         }
+        public List<CF_Table> GetTableByArea(string areaID)
+        {
+            return CafeEntities.Instance.CF_Table.Where(x => x.AreaID == areaID).ToList();
+        }
     }
 }

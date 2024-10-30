@@ -29,7 +29,7 @@ namespace DAL
         }
         public void GetBillByTableName(string tableName)
         {
-            
+
         }
     }
 }

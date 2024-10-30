@@ -20,8 +20,8 @@ namespace DAL
             this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public string OrderID { get; set; }
-        public System.DateTime DateCheckIn { get; set; }
+        public int OrderID { get; set; }
+        public Nullable<System.DateTime> DateCheckIn { get; set; }
         public Nullable<System.DateTime> DateCheckOut { get; set; }
         public string Status { get; set; }
         public string TableID { get; set; }

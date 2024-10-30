@@ -94,6 +94,11 @@ namespace DAL
                          || c.Price.ToString().Contains(keyword))
                 .ToList();
         }
-
+        public List<Product> GetProductByCategory(string categoryID)
+        {
+            return CafeEntities.Instance.Products
+                .Where(c => c.CategoryID == categoryID)
+                .ToList();
+        }
     }
 }

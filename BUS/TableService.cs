@@ -43,5 +43,9 @@ namespace BUS
         {
             return DALTable.Instance.SearchTable(keyword);
         }
+        public List<CF_Table> GetTableByArea(string areaID)
+        {
+            return DALTable.Instance.GetTableByArea(areaID);
+        }
     }
 }

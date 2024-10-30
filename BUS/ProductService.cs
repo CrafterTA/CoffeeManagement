@@ -43,5 +43,9 @@ namespace BUS
         {
             return DALProduct.Instance.SearchProduct(search);
         }
+        public List<Product> GetProductByCategory(string categoryID)
+        {
+            return DALProduct.Instance.GetProductByCategory(categoryID);
+        }
     }
 }

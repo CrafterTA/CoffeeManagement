@@ -57,6 +57,7 @@
     <Compile Include="AreaService.cs" />
     <Compile Include="CategoryService.cs" />
     <Compile Include="ProductService.cs" />
+    <Compile Include="ProductSizeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
     <Compile Include="SizeService.cs" />

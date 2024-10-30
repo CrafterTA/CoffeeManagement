@@ -26,6 +26,7 @@ namespace DAL
                 }
                 return _instance;
             }
+            set => _instance = value;
         }
         public CafeEntities()
             : base("name=CafeEntities")

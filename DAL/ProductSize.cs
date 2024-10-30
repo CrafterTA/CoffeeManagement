@@ -20,7 +20,7 @@ namespace DAL
             this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public string ProductSizeID { get; set; }
+        public int ProductSizeID { get; set; }
         public string SizeName { get; set; }
         public string ProductID { get; set; }
     

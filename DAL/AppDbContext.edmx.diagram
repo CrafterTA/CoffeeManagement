@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="78b5316cc43347d4b7cfc42bf2b4f5f6" Name="Diagram1">
+      <Diagram DiagramId="46dc6a3d3a234335a297cddd03e6fadf" Name="Diagram1">
         <EntityTypeShape EntityType="CafeModel.Area" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CafeModel.Bill" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CafeModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
@@ -16,15 +16,15 @@
         <EntityTypeShape EntityType="CafeModel.Role" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CafeModel.Size" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CafeModel.User" Width="1.5" PointX="10" PointY="5" IsExpanded="true" />
-        <AssociationConnector Association="CafeModel.FK__CF_Table__AreaID__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__CF_Table__AreaID__5AEE82B9" ManuallyRouted="false" />
         <AssociationConnector Association="CafeModel.FK__Bill__OrderDetai__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__Product__Categor__5EBF139D" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__Orders__TableID__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__OrderDeta__Order__6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__OrderDeta__Produ__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__ProductSi__Produ__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__ProductSi__SizeN__5FB337D6" ManuallyRouted="false" />
-        <AssociationConnector Association="CafeModel.FK__Users__RoleID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__Product__Categor__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__Orders__TableID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__OrderDeta__Order__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__OrderDeta__Produ__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__ProductSi__Produ__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__ProductSi__SizeN__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeModel.FK__Users__RoleID__4BAC3F29" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

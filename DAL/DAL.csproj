@@ -87,6 +87,7 @@
     <Compile Include="DALBill.cs" />
     <Compile Include="DALCategory.cs" />
     <Compile Include="DALProduct.cs" />
+    <Compile Include="DALProductSize.cs" />
     <Compile Include="DALRole.cs" />
     <Compile Include="DALSize.cs" />
     <Compile Include="DALTable.cs" />

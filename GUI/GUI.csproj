@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBill.Designer.cs">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="ucHomepage.Designer.cs">
       <DependentUpon>ucHomepage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fBill.resx">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fCRUD.resx">
       <DependentUpon>fCRUD.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,6 +30,7 @@
         {
             this.cmbCategory = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCheckOut = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.SuspendLayout();
             // 
             // cmbCategory
@@ -55,12 +56,28 @@
             this.flpProduct.Size = new System.Drawing.Size(1271, 600);
             this.flpProduct.TabIndex = 1;
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(807, 12);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(180, 45);
+            this.btnCheckOut.TabIndex = 2;
+            this.btnCheckOut.Text = "Kiểm tra đơn hàng";
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click_1);
+            // 
             // fDisplayProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1295, 692);
+            this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.flpProduct);
             this.Controls.Add(this.cmbCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,5 +92,6 @@
 
         private Siticone.Desktop.UI.WinForms.SiticoneComboBox cmbCategory;
         private System.Windows.Forms.FlowLayoutPanel flpProduct;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton btnCheckOut;
     }
 }

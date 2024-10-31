@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AreaService.cs" />
     <Compile Include="CategoryService.cs" />
+    <Compile Include="OrderDetailService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="ProductSizeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

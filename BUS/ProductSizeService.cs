@@ -19,7 +19,7 @@ namespace BUS
             }
             set => _instance = value;
         }
-        public ProductSize GetProductSizeByID(string productSizeID)
+        public ProductSize GetProductSizeByID(int productSizeID)
         {
             return DALProductSize.Instance.GetProductSizeByID(productSizeID);
         }

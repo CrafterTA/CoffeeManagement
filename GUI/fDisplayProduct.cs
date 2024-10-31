@@ -10,18 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using static System.Net.WebRequestMethods;
 
 namespace GUI
 {
     public partial class fDisplayProduct : Form
     {
+        public CF_Table SelectedTable { get; set; }
         private List<OrderDetail> cart = new List<OrderDetail>();
+
         public fDisplayProduct()
         {
             InitializeComponent();
         }
-        
+
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string cate = cmbCategory.SelectedValue.ToString();
@@ -32,14 +34,14 @@ namespace GUI
         {
             flpProduct.Controls.Clear();
             var listProduct = ProductService.Instance.GetProductByCategory(cate);
-            var listSizes = ProductService.Instance.GetAllSizes(); // Lấy danh sách kích thước
+            var listSizes = ProductService.Instance.GetAllSizes();
 
             foreach (var item in listProduct)
             {
                 Panel pdPanel = new Panel
                 {
                     Width = 150,
-                    Height = 340, 
+                    Height = 340,
                     BorderStyle = BorderStyle.FixedSingle,
                     Tag = item
                 };
@@ -160,13 +162,14 @@ namespace GUI
                 flpProduct.Controls.Add(pdPanel);
             }
         }
+
         private void AddToCart(Product product, int quantity, string sizeName)
         {
             // Thêm sản phẩm và kích thước vào bảng ProductSize nếu chưa tồn tại
             ProductService.Instance.CreateProductSize(product.ProductID, sizeName);
 
             // Lấy ProductSizeID vừa thêm
-            var productSize = DALProductSize.Instance.Information()
+            var productSize = ProductSizeService.Instance.Information()
                 .FirstOrDefault(ps => ps.ProductID == product.ProductID && ps.SizeName == sizeName);
 
             if (productSize != null)
@@ -177,38 +180,15 @@ namespace GUI
                     ProductSizeID = productSize.ProductSizeID,
                     Quantity = quantity
                 };
+
                 cart.Add(orderDetail);
+
                 MessageBox.Show($"Đã thêm {product.ProductName} - SL: {quantity} - Size: {sizeName} vào giỏ hàng.");
             }
         }
-        private void btnCheckout_Click(object sender, EventArgs e)
-        {
-            // Tạo đơn hàng mới
-            var order = new Order
-            {
-                DateCheckIn = DateTime.Now,
-                Status = "Pending"
-            };
-            CafeEntities.Instance.Orders.Add(order);
-            CafeEntities.Instance.SaveChanges();
 
-            // Thêm chi tiết đơn hàng vào bảng OrderDetail và tạo hóa đơn
-            foreach (var orderDetail in cart)
-            {
-                orderDetail.OrderID = order.OrderID;
-                CafeEntities.Instance.OrderDetails.Add(orderDetail);
-                CafeEntities.Instance.SaveChanges();
+       
 
-                ProductService.Instance.CreateBill(orderDetail.OrderDetailID, DateTime.Now, "Paid");
-            }
-
-            // Tính tổng tiền
-            decimal totalAmount = cart.Sum(od => (od.Quantity ?? 0) * od.ProductSize.Product.Price + (od.ProductSize.Size.SizePrice ?? 0m));
-            MessageBox.Show($"Tổng tiền: {totalAmount} VND");
-
-            //Thanh toán xong thì xóa giỏ hàng
-            cart.Clear();
-        }
         private void PdPanel_Click(object sender, EventArgs e)
         {
             Panel panel = sender as Panel;
@@ -216,30 +196,6 @@ namespace GUI
             ComboBox cmbSize = panel.Controls.OfType<ComboBox>().FirstOrDefault();
             string selectedSize = cmbSize?.SelectedValue?.ToString() ?? "DefaultSize";
             AddToCart(product, 1, selectedSize);
-        }
-        private void AddToBill(Product item, int quantity)
-        {
-            ProductService.Instance.CreateProductSize(item.ProductID, "DefaultSize");
-
-            //Lấy thông tin ProductSize vừa thêm
-            var productSize = DALProductSize.Instance.Information()
-                .FirstOrDefault(ps => ps.ProductID == item.ProductID && ps.SizeName == "DefaultSize");
-
-            if (productSize != null)
-            {
-                // Thêm ctdh vô OrderDetail
-                ProductService.Instance.CreateOrderDetail(productSize.ProductSizeID, 1, quantity); // Giả sử OrderID là 1
-
-                // Tạo hóa đơn trong bảng Bill
-                var orderDetail = DALOrderDetail.Instance.GetAllOrderDetails()
-                    .FirstOrDefault(od => od.ProductSizeID == productSize.ProductSizeID && od.OrderID == 1);
-
-                if (orderDetail != null)
-                {
-                    ProductService.Instance.CreateBill(orderDetail.OrderDetailID, DateTime.Now, "Thanh toán");
-                    MessageBox.Show($"Đã thêm {item.ProductName} - SL: {quantity} vào hóa đơn.");
-                }
-            }
         }
 
         private void fDisplayProduct_Load(object sender, EventArgs e)
@@ -253,6 +209,16 @@ namespace GUI
             cmbCategory.DataSource = listCate;
             cmbCategory.DisplayMember = "CategoryName";
             cmbCategory.ValueMember = "CategoryID";
+        }
+
+        private void btnCheckOut_Click_1(object sender, EventArgs e)
+        {
+            // Chuyển sang form hiển thị hóa đơn
+            fBill billForm = new fBill();
+            billForm.SelectedTable = SelectedTable;
+            billForm.Cart = cart;
+            billForm.Show();
+            this.Hide();
         }
     }
 }

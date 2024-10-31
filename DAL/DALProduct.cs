@@ -116,5 +116,28 @@ namespace DAL
         {
             return DALSize.Instance.GetAllSizes();
         }
+        public int CreateOrder(string tableID)
+        {
+            var order = new Order()
+            {
+                TableID = tableID,
+                DateCheckIn = DateTime.Now,
+                Status = "Đang hoạt động"
+            };
+
+            CafeEntities.Instance.Orders.Add(order);
+            CafeEntities.Instance.SaveChanges();
+            return order.OrderID; 
+        }
+        public OrderDetail GetOrderDetail(int orderID, int productSizeID)
+        {
+            return CafeEntities.Instance.OrderDetails
+                .FirstOrDefault(od => od.OrderID == orderID && od.ProductSizeID == productSizeID);
+        }
+        public List<ProductSize> GetProductByID(int productSizeID)
+        {
+            return CafeEntities.Instance.ProductSizes.Where(p => p.ProductSizeID == productSizeID).ToList();
+
+        }
     }
 }

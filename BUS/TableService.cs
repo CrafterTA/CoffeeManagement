@@ -27,6 +27,10 @@ namespace BUS
         {
             return DALTable.Instance.GetTableByID(tableID);
         }
+        public CF_Table GetTableByName(string tableName)
+        {
+            return DALTable.Instance.GetTableByName(tableName);
+        }
         public bool AddTable(string tableID, string tableName, string areaID)
         {
             return DALTable.Instance.AddTable(tableID, tableName, areaID);
@@ -47,5 +51,6 @@ namespace BUS
         {
             return DALTable.Instance.GetTableByArea(areaID);
         }
+
     }
 }

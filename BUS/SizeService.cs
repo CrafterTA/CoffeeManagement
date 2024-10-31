@@ -44,5 +44,6 @@ namespace BUS
         {
             return DALSize.Instance.SearchSize(search);
         }
+        
     }
 }

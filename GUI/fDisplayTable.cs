@@ -63,7 +63,16 @@ namespace GUI
         private void BtnTable_Click(object sender, EventArgs e)
         {
             Button btnTable = sender as Button;
+            string tableName = btnTable.Text;
 
+            // Lưu thông tin bàn 
+            var table = TableService.Instance.GetTableByName(tableName);
+
+            //Truyền dữ liệu của bàn
+            fDisplayProduct displayProductForm = new fDisplayProduct();
+            displayProductForm.SelectedTable = table;
+            displayProductForm.Show();
+            this.Hide();
         }
     }
 }

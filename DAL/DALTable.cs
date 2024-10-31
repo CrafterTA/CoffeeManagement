@@ -93,5 +93,9 @@ namespace DAL
         {
             return CafeEntities.Instance.CF_Table.Where(x => x.AreaID == areaID).ToList();
         }
+        public CF_Table GetTableByName(string tableName)
+        {
+            return CafeEntities.Instance.CF_Table.FirstOrDefault(x => x.TableName == tableName);
+        }
     }
 }

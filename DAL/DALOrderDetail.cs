@@ -45,5 +45,9 @@ namespace DAL
                 .Where(od => od.OrderID == orderID)
                 .Sum(od => od.Quantity * (od.ProductSize.Product.Price + od.ProductSize.Size.SizePrice));
         }
+        public List<OrderDetail> GetOrderDetailsByOrderID(int orderID)
+        {
+            return CafeEntities.Instance.OrderDetails.Where(od => od.OrderID == orderID).ToList();
+        }
     }
 }

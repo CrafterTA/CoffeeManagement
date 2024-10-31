@@ -23,7 +23,7 @@ namespace DAL
         {
             return CafeEntities.Instance.ProductSizes.ToList();
         }
-        public ProductSize GetProductSizeByID(string productSizeID)
+        public ProductSize GetProductSizeByID(int productSizeID)
         {
             return CafeEntities.Instance.ProductSizes.Find(productSizeID);
         }
@@ -70,6 +70,11 @@ namespace DAL
             CafeEntities.Instance.ProductSizes.Remove(productSize);
             CafeEntities.Instance.SaveChanges();
             return true;
+        }
+
+        public List<ProductSize> GetProductById(int productSizeID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

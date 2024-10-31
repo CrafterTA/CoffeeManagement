@@ -62,7 +62,8 @@ namespace GUI
 
         private void BtnTable_Click(object sender, EventArgs e)
         {
-            
+            Button btnTable = sender as Button;
+
         }
     }
 }

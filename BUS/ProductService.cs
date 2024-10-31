@@ -47,5 +47,21 @@ namespace BUS
         {
             return DALProduct.Instance.GetProductByCategory(categoryID);
         }
+        public void CreateProductSize(string productID, string sizeName)
+        {
+            DALProductSize.Instance.CreateProductSize(productID, sizeName);
+        }
+        public void CreateOrderDetail(int productSizeID, int orderID, int quantity)
+        {
+            DALOrderDetail.Instance.CreateOrderDetail(productSizeID, orderID, quantity);
+        }
+        public void CreateBill(int orderDetailID, DateTime paymentDate, string paymentStatus)
+        {
+            DALBill.Instance.CreateBill(orderDetailID, paymentDate,paymentStatus);
+        }
+        public List<Size> GetAllSizes()
+        {
+            return DALSize.Instance.GetAllSizes();
+        }
     }
 }

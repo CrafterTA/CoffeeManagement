@@ -29,6 +29,16 @@ namespace DAL
         }
         public ProductSize CreateProductSize(string productID, string sizeName)
         {
+            
+            var size = CafeEntities.Instance.Sizes.FirstOrDefault(s => s.SizeName == sizeName);
+            if (size == null)
+            {
+                
+                size = new Size { SizeName = sizeName };
+                CafeEntities.Instance.Sizes.Add(size);
+                CafeEntities.Instance.SaveChanges();
+            }
+
             var productSize = new ProductSize()
             {
                 ProductID = productID,

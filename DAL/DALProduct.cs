@@ -100,5 +100,21 @@ namespace DAL
                 .Where(c => c.CategoryID == categoryID)
                 .ToList();
         }
+        public void CreateProductSize(string productID, string sizeName)
+        {
+            DALProductSize.Instance.CreateProductSize(productID, sizeName);
+        }
+        public void CreateOrderDetail(int orderID, int productSizeID, int quantity)
+        {
+            DALOrderDetail.Instance.CreateOrderDetail(orderID, productSizeID, quantity);
+        }
+        public void CreateBill( int orderDetailID, DateTime paymentDate, string paymentStatus)
+        {
+            DALBill.Instance.CreateBill( orderDetailID, paymentDate, paymentStatus);
+        }
+        public List<Size> GetAllSizes()
+        {
+            return DALSize.Instance.GetAllSizes();
+        }
     }
 }

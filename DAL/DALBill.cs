@@ -27,9 +27,20 @@ namespace DAL
         {
             return CafeEntities.Instance.Bills.Find(billID);
         }
-        public void GetBillByTableName(string tableName)
+        public Bill CreateBill( int orderDetailID, DateTime paymentDate, string paymentStatus)
         {
-
+            var bill = new Bill()
+            {
+                
+                OrderDetailID = orderDetailID,
+                PaymentDate = paymentDate,
+                PaymentStatus = paymentStatus
+            };
+            CafeEntities.Instance.Bills.Add(bill);
+            CafeEntities.Instance.SaveChanges();
+            return bill;
         }
+        
+
     }
 }

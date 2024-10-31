@@ -35,10 +35,19 @@ namespace GUI
             {
                 if (user.Userpassword == password)
                 {
-                    MessageBox.Show("Đăng nhập thành công!");
-                    fPresentation mainForm = new fPresentation();
-                    mainForm.Show();
-                    this.Hide();
+                    if (RoleService.Instance.GetRoleByID(user.RoleID).RoleName == "Admin")
+                    {
+                        fPresentation mainForm = new fPresentation();
+                        mainForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        fPresentationS mainForm = new fPresentationS();
+                        mainForm.Show();
+                        this.Hide();
+                    }
+                    
                 }
                 else
                 {

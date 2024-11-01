@@ -35,6 +35,26 @@ namespace BUS
         {
             return DALOrderDetail.Instance.GetAllOrderDetails();
         }
+        public OrderDetail AddToCart(int orderID, string productID, string sizeName, int quantity)
+        {
+            
+            ProductService.Instance.CreateProductSize(productID, sizeName);
+
+            //Lấy thông tin PS
+            var productSize = ProductSizeService.Instance.Information()
+                .FirstOrDefault(ps => ps.ProductID == productID && ps.SizeName == sizeName);
+
+            if (productSize != null)
+            {
+                
+                DALOrderDetail.Instance.CreateOrderDetail(productSize.ProductSizeID, orderID, quantity);
+
+                
+                return DALOrderDetail.Instance.GetOrderDetailByID(productSize.ProductSizeID);
+            }
+
+            return null;
+        }
 
     }
 }

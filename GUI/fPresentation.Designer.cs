@@ -34,7 +34,6 @@
             this.siticoneGradientButton1 = new Siticone.Desktop.UI.WinForms.SiticoneGradientButton();
             this.btnSale = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnAdmin = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.btnTable = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnCategory = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.btnHome = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.siticonePanel2 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
@@ -54,7 +53,6 @@
             this.siticonePanel1.Controls.Add(this.siticoneGradientButton1);
             this.siticonePanel1.Controls.Add(this.btnSale);
             this.siticonePanel1.Controls.Add(this.btnAdmin);
-            this.siticonePanel1.Controls.Add(this.btnTable);
             this.siticonePanel1.Controls.Add(this.btnCategory);
             this.siticonePanel1.Controls.Add(this.btnHome);
             this.siticonePanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -104,7 +102,7 @@
             this.btnSale.Image = global::GUI.Properties.Resources.analytics_income_increase_chart_growth_profit_revenue_icon_2326031;
             this.btnSale.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSale.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnSale.Location = new System.Drawing.Point(0, 323);
+            this.btnSale.Location = new System.Drawing.Point(0, 279);
             this.btnSale.Name = "btnSale";
             this.btnSale.PressedDepth = 0;
             this.btnSale.Size = new System.Drawing.Size(258, 45);
@@ -130,7 +128,7 @@
             this.btnAdmin.Image = global::GUI.Properties.Resources._353430_checkbox_edit_pen_pencil_1075161;
             this.btnAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdmin.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnAdmin.Location = new System.Drawing.Point(0, 283);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 239);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.PressedDepth = 0;
             this.btnAdmin.Size = new System.Drawing.Size(258, 45);
@@ -139,32 +137,6 @@
             this.btnAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdmin.TextOffset = new System.Drawing.Point(15, 0);
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // btnTable
-            // 
-            this.btnTable.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnTable.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            this.btnTable.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnTable.CheckedState.Image = global::GUI.Properties.Resources.table_4090;
-            this.btnTable.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTable.FillColor = System.Drawing.Color.White;
-            this.btnTable.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnTable.Image = global::GUI.Properties.Resources.table_40901;
-            this.btnTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTable.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnTable.Location = new System.Drawing.Point(0, 241);
-            this.btnTable.Name = "btnTable";
-            this.btnTable.PressedDepth = 0;
-            this.btnTable.Size = new System.Drawing.Size(258, 45);
-            this.btnTable.TabIndex = 0;
-            this.btnTable.Text = "Quản lý bàn";
-            this.btnTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTable.TextOffset = new System.Drawing.Point(15, 0);
             // 
             // btnCategory
             // 
@@ -188,7 +160,7 @@
             this.btnCategory.PressedDepth = 0;
             this.btnCategory.Size = new System.Drawing.Size(258, 45);
             this.btnCategory.TabIndex = 0;
-            this.btnCategory.Text = "Sản phẩm";
+            this.btnCategory.Text = "Đặt món";
             this.btnCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.TextOffset = new System.Drawing.Point(15, 0);
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
@@ -301,7 +273,6 @@
         private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnSale;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnAdmin;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton btnTable;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnCategory;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnHome;
         private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel2;

@@ -64,9 +64,9 @@ namespace BUS
             return DALSize.Instance.GetAllSizes();
         }
 
-        public List<ProductSize> GetProductById(int productSizeID)
+       /* public List<ProductSize> GetProductById(int productSizeID)
         {
             return DALProductSize.Instance.GetProductById(productSizeID);
-        }
+        }*/
     }
 }

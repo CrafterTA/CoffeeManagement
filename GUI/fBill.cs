@@ -17,9 +17,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        
-        
-
         private void fBill_Load(object sender, EventArgs e)
         {
             DisplayBill();
@@ -27,25 +24,60 @@ namespace GUI
 
         private void DisplayBill()
         {
-            // Hiển thị thông tin bàn
+            // Display tt ban
             lblTableName.Text = SelectedTable.TableName;
 
-            // Hiển thị thông tin sản phẩm trong giỏ hàng
+            // Display sp trong cart
             decimal totalAmount = 0;
+            dgvBill.Rows.Clear(); 
             foreach (var item in Cart)
             {
-                var productSize = ProductSizeService.Instance.GetProductSizeByID(item.ProductSizeID); // Convert int to string
+                var productSize = ProductSizeService.Instance.GetProductSizeByID(item.ProductSizeID);
                 var product = ProductService.Instance.GetProductByID(productSize.ProductID);
                 var size = SizeService.Instance.GetSizeByName(productSize.SizeName);
                 decimal itemTotal = item.Quantity.Value * (product.Price + size.SizePrice.Value);
-                totalAmount += itemTotal; 
+                totalAmount += itemTotal;
 
-                // Hiển thị chi tiết sản phẩm
-                lstBill.Items.Add($"{product.ProductName} - Size: {size.SizeName} - SL: {item.Quantity} - Tổng: {itemTotal} VND");
+                // Add row to DataGridView
+                dgvBill.Rows.Add(product.ProductName, size.SizeName, item.Quantity, itemTotal);
             }
 
-            // Hiển thị tổng tiền
             lblTotal.Text = $"Tổng tiền: {totalAmount} VND";
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Cart)
+            {
+                BillService.Instance.CreateBill(item.OrderDetailID, DateTime.Now, "Đã thanh toán");
+            }
+
+            MessageBox.Show("Thanh toán thành công!");
+
+            // Cập nhật biểu đồ doanh số
+            UpdateSalesChart();
+
+            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hóa đơn đã bị hủy.");
+            this.Close();
+            var displayTableForm = Application.OpenForms.OfType<fDisplayTable>().FirstOrDefault();
+            if (displayTableForm != null)
+            {
+                displayTableForm.Show();
+            }
+        }
+        private void UpdateSalesChart()
+        {
+            // Cập nhật biểu đồ doanh số
+            var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
+            if (salesReportForm != null)
+            {
+                salesReportForm.UpdateChart();
+            }
         }
     }
 }

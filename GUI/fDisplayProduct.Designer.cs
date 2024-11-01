@@ -31,6 +31,8 @@
             this.cmbCategory = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCheckOut = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.siticoneControlBox2 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            this.siticoneControlBox1 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
             this.SuspendLayout();
             // 
             // cmbCategory
@@ -64,12 +66,33 @@
             this.btnCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(807, 12);
+            this.btnCheckOut.Location = new System.Drawing.Point(869, 12);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(180, 45);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Kiểm tra đơn hàng";
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click_1);
+            // 
+            // siticoneControlBox2
+            // 
+            this.siticoneControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox2.ControlBoxType = Siticone.Desktop.UI.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.siticoneControlBox2.FillColor = System.Drawing.Color.White;
+            this.siticoneControlBox2.IconColor = System.Drawing.Color.Black;
+            this.siticoneControlBox2.Location = new System.Drawing.Point(1206, 0);
+            this.siticoneControlBox2.Name = "siticoneControlBox2";
+            this.siticoneControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox2.TabIndex = 4;
+            // 
+            // siticoneControlBox1
+            // 
+            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox1.FillColor = System.Drawing.Color.Red;
+            this.siticoneControlBox1.IconColor = System.Drawing.Color.White;
+            this.siticoneControlBox1.Location = new System.Drawing.Point(1248, 0);
+            this.siticoneControlBox1.Name = "siticoneControlBox1";
+            this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox1.TabIndex = 3;
             // 
             // fDisplayProduct
             // 
@@ -77,6 +100,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1295, 692);
+            this.Controls.Add(this.siticoneControlBox2);
+            this.Controls.Add(this.siticoneControlBox1);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.flpProduct);
             this.Controls.Add(this.cmbCategory);
@@ -93,5 +118,7 @@
         private Siticone.Desktop.UI.WinForms.SiticoneComboBox cmbCategory;
         private System.Windows.Forms.FlowLayoutPanel flpProduct;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnCheckOut;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
     }
 }

@@ -18,7 +18,7 @@ namespace GUI
     {
         public CF_Table SelectedTable { get; set; }
         private List<OrderDetail> cart = new List<OrderDetail>();
-
+        public int OrderID { get; set; }
         public fDisplayProduct()
         {
             InitializeComponent();
@@ -84,7 +84,7 @@ namespace GUI
                 {
                     Text = "1",
                     Width = 30,
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.BottomCenter
                 };
 
                 ComboBox cmbSize = new ComboBox
@@ -120,7 +120,7 @@ namespace GUI
                 };
                 Button btnAddToCart = new Button
                 {
-                    Text = "Chọn Mua",
+                    Text = "Đặt món",
                     Width = 140,
                     Height = 30,
                     BackColor = Color.OrangeRed,
@@ -165,29 +165,19 @@ namespace GUI
 
         private void AddToCart(Product product, int quantity, string sizeName)
         {
-            // Thêm sản phẩm và kích thước vào bảng ProductSize nếu chưa tồn tại
-            ProductService.Instance.CreateProductSize(product.ProductID, sizeName);
+            var orderDetail = OrderDetailService.Instance.AddToCart(OrderID, product.ProductID, sizeName, quantity);
 
-            // Lấy ProductSizeID vừa thêm
-            var productSize = ProductSizeService.Instance.Information()
-                .FirstOrDefault(ps => ps.ProductID == product.ProductID && ps.SizeName == sizeName);
-
-            if (productSize != null)
+            if (orderDetail != null)
             {
-                // Thêm ctdh vào giỏ hàng
-                var orderDetail = new OrderDetail
-                {
-                    ProductSizeID = productSize.ProductSizeID,
-                    Quantity = quantity
-                };
-
+                // Thêm vào giỏ hàng
                 cart.Add(orderDetail);
 
                 MessageBox.Show($"Đã thêm {product.ProductName} - SL: {quantity} - Size: {sizeName} vào giỏ hàng.");
             }
         }
 
-       
+
+
 
         private void PdPanel_Click(object sender, EventArgs e)
         {
@@ -213,7 +203,7 @@ namespace GUI
 
         private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
-            // Chuyển sang form hiển thị hóa đơn
+            // Chuyển sang form bill
             fBill billForm = new fBill();
             billForm.SelectedTable = SelectedTable;
             billForm.Cart = cart;

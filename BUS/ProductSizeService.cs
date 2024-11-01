@@ -21,7 +21,7 @@ namespace BUS
         }
         public ProductSize GetProductSizeByID(int productSizeID)
         {
-            return DALProductSize.Instance.GetProductSizeByID(productSizeID);
+            return DALProductSize.Instance.GetProductSizeByID(productSizeID).FirstOrDefault();
         }
         public List<ProductSize> Information()
         {

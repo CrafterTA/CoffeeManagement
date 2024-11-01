@@ -28,59 +28,231 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstBill = new System.Windows.Forms.ListView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTableName = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             this.lblTotal = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            this.dgvBill = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
+            this.siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPay = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.btnCancel = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.siticoneControlBox2 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            this.siticoneControlBox1 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
+            this.siticonePanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstBill
-            // 
-            this.lstBill.HideSelection = false;
-            this.lstBill.Location = new System.Drawing.Point(86, 189);
-            this.lstBill.Name = "lstBill";
-            this.lstBill.Size = new System.Drawing.Size(1031, 493);
-            this.lstBill.TabIndex = 0;
-            this.lstBill.UseCompatibleStateImageBehavior = false;
             // 
             // lblTableName
             // 
             this.lblTableName.BackColor = System.Drawing.Color.Transparent;
-            this.lblTableName.Location = new System.Drawing.Point(224, 133);
+            this.lblTableName.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTableName.Location = new System.Drawing.Point(924, 496);
             this.lblTableName.Name = "lblTableName";
-            this.lblTableName.Size = new System.Drawing.Size(90, 18);
+            this.lblTableName.Size = new System.Drawing.Size(60, 23);
             this.lblTableName.TabIndex = 1;
-            this.lblTableName.Text = "lblTableName";
+            this.lblTableName.Text = "TT bàn";
             // 
             // lblTotal
             // 
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Location = new System.Drawing.Point(446, 133);
+            this.lblTotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTotal.Location = new System.Drawing.Point(896, 525);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(90, 18);
+            this.lblTotal.Size = new System.Drawing.Size(121, 23);
             this.lblTotal.TabIndex = 1;
-            this.lblTotal.Text = "lblTableName";
+            this.lblTotal.Text = "Tổng hóa đơn";
+            // 
+            // dgvBill
+            // 
+            this.dgvBill.AllowUserToAddRows = false;
+            this.dgvBill.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.SizeName,
+            this.Quantity,
+            this.Total});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBill.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBill.Location = new System.Drawing.Point(0, 91);
+            this.dgvBill.Name = "dgvBill";
+            this.dgvBill.ReadOnly = true;
+            this.dgvBill.RowHeadersVisible = false;
+            this.dgvBill.RowHeadersWidth = 51;
+            this.dgvBill.RowTemplate.Height = 24;
+            this.dgvBill.Size = new System.Drawing.Size(1174, 374);
+            this.dgvBill.TabIndex = 2;
+            this.dgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBill.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvBill.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvBill.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvBill.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvBill.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBill.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBill.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvBill.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvBill.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBill.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvBill.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.ThemeStyle.HeaderStyle.Height = 18;
+            this.dgvBill.ThemeStyle.ReadOnly = true;
+            this.dgvBill.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBill.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBill.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBill.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBill.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // siticonePanel1
+            // 
+            this.siticonePanel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.siticonePanel1.Controls.Add(this.siticoneControlBox2);
+            this.siticonePanel1.Controls.Add(this.siticoneControlBox1);
+            this.siticonePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.siticonePanel1.Location = new System.Drawing.Point(0, 0);
+            this.siticonePanel1.Name = "siticonePanel1";
+            this.siticonePanel1.Size = new System.Drawing.Size(1174, 47);
+            this.siticonePanel1.TabIndex = 3;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.HeaderText = "Tên sản phẩm";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // SizeName
+            // 
+            this.SizeName.HeaderText = "Size";
+            this.SizeName.MinimumWidth = 6;
+            this.SizeName.Name = "SizeName";
+            this.SizeName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Số lượng";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Tổng tiền";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // btnPay
+            // 
+            this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPay.FillColor = System.Drawing.Color.Red;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.Location = new System.Drawing.Point(817, 615);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(143, 45);
+            this.btnPay.TabIndex = 4;
+            this.btnPay.Text = "Thanh toán";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(991, 615);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(143, 45);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // siticoneControlBox2
+            // 
+            this.siticoneControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox2.ControlBoxType = Siticone.Desktop.UI.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.siticoneControlBox2.FillColor = System.Drawing.Color.White;
+            this.siticoneControlBox2.IconColor = System.Drawing.Color.Black;
+            this.siticoneControlBox2.Location = new System.Drawing.Point(1087, 0);
+            this.siticoneControlBox2.Name = "siticoneControlBox2";
+            this.siticoneControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox2.TabIndex = 3;
+            // 
+            // siticoneControlBox1
+            // 
+            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox1.FillColor = System.Drawing.Color.Red;
+            this.siticoneControlBox1.IconColor = System.Drawing.Color.White;
+            this.siticoneControlBox1.Location = new System.Drawing.Point(1129, 0);
+            this.siticoneControlBox1.Name = "siticoneControlBox1";
+            this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.siticoneControlBox1.TabIndex = 2;
             // 
             // fBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 723);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.siticonePanel1);
+            this.Controls.Add(this.dgvBill);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTableName);
-            this.Controls.Add(this.lstBill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fBill";
             this.Text = "fBill";
             this.Load += new System.EventHandler(this.fBill_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
+            this.siticonePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView lstBill;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel lblTableName;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel lblTotal;
+        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView dgvBill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SizeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel1;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton btnPay;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton btnCancel;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
+        private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
     }
 }

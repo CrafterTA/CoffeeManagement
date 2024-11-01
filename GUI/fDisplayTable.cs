@@ -65,12 +65,18 @@ namespace GUI
             Button btnTable = sender as Button;
             string tableName = btnTable.Text;
 
-            // Lưu thông tin bàn 
-            var table = TableService.Instance.GetTableByName(tableName);
+            
+            var selectedTable = TableService.Instance.GetTableByName(tableName);
 
-            //Truyền dữ liệu của bàn
-            fDisplayProduct displayProductForm = new fDisplayProduct();
-            displayProductForm.SelectedTable = table;
+            
+            var order = OrderService.Instance.CreateOrder(selectedTable.TableID);
+
+            // Truyền dữ liệu
+            fDisplayProduct displayProductForm = new fDisplayProduct
+            {
+                SelectedTable = selectedTable,
+                OrderID = order.OrderID
+            };
             displayProductForm.Show();
             this.Hide();
         }

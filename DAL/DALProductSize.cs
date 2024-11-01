@@ -23,9 +23,9 @@ namespace DAL
         {
             return CafeEntities.Instance.ProductSizes.ToList();
         }
-        public ProductSize GetProductSizeByID(int productSizeID)
+        public List<ProductSize> GetProductSizeByID(int productSizeID)
         {
-            return CafeEntities.Instance.ProductSizes.Find(productSizeID);
+            return CafeEntities.Instance.ProductSizes.Where(p => p.ProductSizeID == productSizeID).ToList();
         }
         public ProductSize CreateProductSize(string productID, string sizeName)
         {
@@ -72,9 +72,6 @@ namespace DAL
             return true;
         }
 
-        public List<ProductSize> GetProductById(int productSizeID)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

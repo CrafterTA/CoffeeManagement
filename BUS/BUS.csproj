@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaService.cs" />
+    <Compile Include="BillService.cs" />
     <Compile Include="CategoryService.cs" />
     <Compile Include="OrderDetailService.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="ProductSizeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

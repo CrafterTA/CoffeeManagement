@@ -20,6 +20,7 @@
           <Property Name="OrderDetailID" Type="int" Nullable="false" />
           <Property Name="PaymentDate" Type="datetime" />
           <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -100,7 +101,7 @@
           <Property Name="IdentityCard" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleID" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Bill__OrderDetai__656C112C">
+        <Association Name="FK__Bill__OrderDetai__66603565">
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -220,7 +221,7 @@
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sizes" EntityType="Self.Sizes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__OrderDetai__656C112C" Association="Self.FK__Bill__OrderDetai__656C112C">
+          <AssociationSet Name="FK__Bill__OrderDetai__66603565" Association="Self.FK__Bill__OrderDetai__66603565">
             <End Role="OrderDetail" EntitySet="OrderDetail" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
@@ -278,7 +279,8 @@
           <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
           <Property Name="PaymentDate" Type="DateTime" Precision="3" />
           <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrderDetail" Relationship="Self.FK__Bill__OrderDetai__656C112C" FromRole="Bill" ToRole="OrderDetail" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK__Bill__OrderDetai__66603565" FromRole="Bill" ToRole="OrderDetail" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -307,7 +309,7 @@
           <Property Name="ProductSizeID" Type="Int32" Nullable="false" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__OrderDetai__656C112C" FromRole="OrderDetail" ToRole="Bill" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__OrderDetai__66603565" FromRole="OrderDetail" ToRole="Bill" />
           <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__Order__628FA481" FromRole="OrderDetail" ToRole="Orders" />
           <NavigationProperty Name="ProductSize" Relationship="Self.FK__OrderDeta__Produ__619B8048" FromRole="OrderDetail" ToRole="ProductSize" />
         </EntityType>
@@ -387,7 +389,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__OrderDetai__656C112C">
+        <Association Name="FK__Bill__OrderDetai__66603565">
           <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -499,7 +501,7 @@
             <End Role="Area" EntitySet="Areas" />
             <End Role="CF_Table" EntitySet="CF_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__OrderDetai__656C112C" Association="Self.FK__Bill__OrderDetai__656C112C">
+          <AssociationSet Name="FK__Bill__OrderDetai__66603565" Association="Self.FK__Bill__OrderDetai__66603565">
             <End Role="OrderDetail" EntitySet="OrderDetails" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
@@ -553,6 +555,7 @@
                 <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
                 <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
                 <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

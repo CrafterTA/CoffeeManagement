@@ -210,5 +210,12 @@ namespace GUI
             billForm.Show();
             this.Hide();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fDisplayTable displayTableForm = new fDisplayTable();
+            displayTableForm.ShowDialog();
+        }
     }
 }

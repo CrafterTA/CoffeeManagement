@@ -23,5 +23,12 @@ namespace GUI
             loginForm.Show();
             this.Close();
         }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fDisplayTable fDisplayTable = new fDisplayTable();
+            fDisplayTable.ShowDialog();
+        }
     }
 }

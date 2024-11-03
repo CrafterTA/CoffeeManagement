@@ -34,12 +34,13 @@ namespace DAL
             {
                 throw new Exception($"OrderDetailID {orderDetailID} không tồn tại trong bảng OrderDetail.");
             }
-
+            decimal totalMoney = (decimal)(orderDetail.Quantity * (orderDetail.ProductSize.Product.Price + orderDetail.ProductSize.Size.SizePrice));
             var bill = new Bill()
             {
                 OrderDetailID = orderDetailID,
                 PaymentDate = paymentDate,
-                PaymentStatus = paymentStatus
+                PaymentStatus = paymentStatus,
+                Total = totalMoney
             };
             CafeEntities.Instance.Bills.Add(bill);
             CafeEntities.Instance.SaveChanges();
@@ -52,29 +53,30 @@ namespace DAL
                 .Where(b => b.PaymentDate.HasValue &&
                             b.PaymentDate.Value.Year == targetDate.Year &&
                             b.PaymentDate.Value.Month == targetDate.Month &&
-                            b.PaymentDate.Value.Day == targetDate.Day)
+                            b.PaymentDate.Value.Day == targetDate.Day &&
+                            b.PaymentStatus == "Đã thanh toán")
                 .ToList();
         }
+
         public List<Bill> GetIncomeByMonth(int month, int year)
         {
-            return CafeEntities.Instance.Bills.Where(b => b.PaymentDate.Value.Month == month && b.PaymentDate.Value.Year == year).ToList();
+            return CafeEntities.Instance.Bills
+                .Where(b => b.PaymentDate.HasValue &&
+                            b.PaymentDate.Value.Month == month &&
+                            b.PaymentDate.Value.Year == year &&
+                            b.PaymentStatus == "Đã thanh toán")
+                .ToList();
         }
+
         public List<Bill> GetIncomeByYear(int year)
         {
-            return CafeEntities.Instance.Bills.Where(b => b.PaymentDate.Value.Year == year).ToList();
+            return CafeEntities.Instance.Bills
+                .Where(b => b.PaymentDate.HasValue &&
+                            b.PaymentDate.Value.Year == year &&
+                            b.PaymentStatus == "Đã thanh toán")
+                .ToList();
         }
-        public decimal TotalBill(Bill bill)
-        {
-            var orderDetail = CafeEntities.Instance.OrderDetails.Find(bill.OrderDetailID);
-            if (orderDetail == null)
-            {
-                throw new Exception($"OrderDetailID {bill.OrderDetailID} không tồn tại trong bảng OrderDetail.");
-            }
-
-            return (decimal)(orderDetail.Quantity * (orderDetail.ProductSize.Product.Price + (orderDetail.ProductSize.Size.SizePrice ?? 0m)));
-            
-            
-        }
+        
 
     }
 }

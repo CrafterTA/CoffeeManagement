@@ -80,5 +80,12 @@ namespace GUI
             displayProductForm.Show();
             this.Hide();
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fPresentation fPresentation = new fPresentation();
+            fPresentation.ShowDialog();
+        }
     }
 }

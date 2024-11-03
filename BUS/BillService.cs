@@ -47,9 +47,6 @@ namespace BUS
         {
             return DALBill.Instance.GetIncomeByYear(year);
         }
-        public decimal Total(Bill bill)
-        {
-            return DALBill.Instance.TotalBill(bill);
-        }
+        
     }
 }

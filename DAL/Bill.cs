@@ -18,6 +18,7 @@ namespace DAL
         public int OrderDetailID { get; set; }
         public Nullable<System.DateTime> PaymentDate { get; set; }
         public string PaymentStatus { get; set; }
+        public decimal Total { get; set; }
     
         public virtual OrderDetail OrderDetail { get; set; }
     }

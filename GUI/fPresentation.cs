@@ -45,7 +45,9 @@ namespace GUI
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            fDisplayTable fDisplayTable = new fDisplayTable();
+            fDisplayTable.ShowDialog();
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -53,6 +55,13 @@ namespace GUI
             this.Hide();
             fCRUD fCRUD = new fCRUD();
             fCRUD.ShowDialog();
+        }
+
+        private void btnSale_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fIncomeRp fIncomeRp = new fIncomeRp();
+            fIncomeRp.ShowDialog();
         }
     }
 }

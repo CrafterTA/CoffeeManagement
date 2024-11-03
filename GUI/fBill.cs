@@ -38,7 +38,6 @@ namespace GUI
                 decimal itemTotal = item.Quantity.Value * (product.Price + size.SizePrice.Value);
                 totalAmount += itemTotal;
 
-                // Add row to DataGridView
                 dgvBill.Rows.Add(product.ProductName, size.SizeName, item.Quantity, itemTotal);
             }
 
@@ -55,9 +54,14 @@ namespace GUI
             MessageBox.Show("Thanh toán thành công!");
 
             // Cập nhật biểu đồ doanh số
-            UpdateSalesChart();
+            //UpdateSalesChart();
+            this.Close();
+            var displayTableForm = Application.OpenForms.OfType<fDisplayTable>().FirstOrDefault();
+            if (displayTableForm != null)
+            {
+                displayTableForm.Show();
+            }
 
-            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,14 +74,21 @@ namespace GUI
                 displayTableForm.Show();
             }
         }
-        private void UpdateSalesChart()
+
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            // Cập nhật biểu đồ doanh số
-            var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
-            if (salesReportForm != null)
-            {
-                salesReportForm.UpdateChart();
-            }
+            this.Hide();
+            fPresentation fPresentation = new fPresentation();
+            fPresentation.ShowDialog();
         }
+        /*private void UpdateSalesChart()
+{
+   // Cập nhật biểu đồ doanh số
+   var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
+   if (salesReportForm != null)
+   {
+       salesReportForm.UpdateChart();
+   }
+} */
     }
 }

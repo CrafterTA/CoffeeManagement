@@ -110,6 +110,7 @@
             this.btnSale.Text = "Doanh thu";
             this.btnSale.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSale.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnSale.Click += new System.EventHandler(this.btnSale_Click);
             // 
             // btnAdmin
             // 
@@ -195,6 +196,7 @@
             // 
             // siticonePanel2
             // 
+            this.siticonePanel2.BackColor = System.Drawing.Color.White;
             this.siticonePanel2.Controls.Add(this.siticoneControlBox2);
             this.siticonePanel2.Controls.Add(this.siticoneControlBox1);
             this.siticonePanel2.Location = new System.Drawing.Point(264, 0);
@@ -242,6 +244,7 @@
             // 
             // ucHomepage1
             // 
+            this.ucHomepage1.BackColor = System.Drawing.Color.White;
             this.ucHomepage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHomepage1.Location = new System.Drawing.Point(0, 0);
             this.ucHomepage1.Name = "ucHomepage1";

@@ -178,6 +178,7 @@ namespace GUI
             cmbCategory.DataSource = listCategory;
             cmbCategory.DisplayMember = "CategoryName";
             cmbCategory.ValueMember = "CategoryID";
+
         }
         private byte[] ImageToByteArray(Image image)
         {
@@ -198,13 +199,13 @@ namespace GUI
         }
         private void btnInsertP_Click(object sender, EventArgs e)
         {
-            byte[] avatarData = pbImage.Image != null ? ImageToByteArray(pbImage.Image) : null;
+            byte[] picData = pbImage.Image != null ? ImageToByteArray(pbImage.Image) : null;
             string productID = txtProductID.Text;
             string productName = txtProductName.Text;
             decimal price = decimal.Parse(txtPrice.Text);
             string categoryID = ((Category)cmbCategory.SelectedItem).CategoryID;
             string description = txtDescriptionP.Text;
-            byte[] image = avatarData;
+            byte[] image = picData;
 
             if (ProductService.Instance.AddProduct(productID, productName, categoryID, price, description, image))
             {
@@ -817,6 +818,13 @@ namespace GUI
                 txtTableName.Text = selectedRow.Cells[1].Value?.ToString();
                 cmbArea.SelectedItem = selectedRow.Cells[2].Value;
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fPresentation fPresentation = new fPresentation();
+            fPresentation.ShowDialog();
         }
     }
 }

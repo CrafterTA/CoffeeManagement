@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BUS;
 using DAL;
+using VietQRHelper;
 
 namespace GUI
 {
@@ -53,7 +54,7 @@ namespace GUI
 
             MessageBox.Show("Thanh toán thành công!");
 
-            // Cập nhật biểu đồ doanh số
+            
             //UpdateSalesChart();
             this.Close();
             var displayTableForm = Application.OpenForms.OfType<fDisplayTable>().FirstOrDefault();
@@ -81,14 +82,26 @@ namespace GUI
             fPresentation fPresentation = new fPresentation();
             fPresentation.ShowDialog();
         }
+
+        private void btnBank_Click(object sender, EventArgs e)
+        {
+            decimal total = 0;
+            total += Cart.Sum(item => item.Quantity.Value * (ProductService.Instance.GetProductByID(ProductSizeService.Instance.GetProductSizeByID(item.ProductSizeID).ProductID).Price + SizeService.Instance.GetSizeByName(ProductSizeService.Instance.GetProductSizeByID(item.ProductSizeID).SizeName).SizePrice.Value));
+            var qrPay = QRPay.InitVietQR(bankBin: BankApp.BanksObject[BankKey.MBBANK].bin,
+                bankNumber: "0886927460"
+                );
+            var content = qrPay.Build();
+            var imageQR = QRCodeHelper.TaoVietQRCodeImage(content);
+            pbBank.Image = imageQR;
+        }
         /*private void UpdateSalesChart()
 {
-   // Cập nhật biểu đồ doanh số
-   var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
-   if (salesReportForm != null)
-   {
-       salesReportForm.UpdateChart();
-   }
+// Cập nhật biểu đồ doanh số
+var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
+if (salesReportForm != null)
+{
+salesReportForm.UpdateChart();
+}
 } */
     }
 }

@@ -156,7 +156,7 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message);
             }
-            timer1.Start();
+            
         }
 
         
@@ -827,13 +827,6 @@ namespace GUI
             fPresentation.ShowDialog();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            FillCmbArea(AreaService.Instance.GetAllAreas());
-            FillCmbCategory(CategoryService.Instance.GetAllCategories());
-            FillCmbRole(RoleService.Instance.GetAllRoles());
-
-        }
 
         private void siticoneButton2_Click(object sender, EventArgs e)
         {
@@ -864,6 +857,13 @@ namespace GUI
         }
 
         private void siticoneButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fPresentation fPresentation = new fPresentation();
+            fPresentation.ShowDialog();
+        }
+
+        private void siticoneButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
             fPresentation fPresentation = new fPresentation();

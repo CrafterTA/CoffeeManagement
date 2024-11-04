@@ -31,22 +31,22 @@ namespace BUS
         public void CreateBill(int orderDetailID, DateTime paymentDate, string paymentStatus)
         {
             DALBill.Instance.CreateBill(orderDetailID, paymentDate, paymentStatus);
-
         }
+
         public List<Bill> GetIncomeByDate(DateTime date)
         {
             return DALBill.Instance.GetIncomeByDate(date);
         }
-
-        public List<Bill> GetIncomeByMonth(int month, int year)
+        public decimal TotalIncomeToday()
         {
-            return DALBill.Instance.GetIncomeByMonth(month, year);
+            return DALBill.Instance.TotalIncomeToday();
+        }
+        public decimal TotalIncomeThisMonth()
+        {
+            return DALBill.Instance.TotalIncomeThisMonth();
         }
 
-        public List<Bill> GetIncomeByYear(int year)
-        {
-            return DALBill.Instance.GetIncomeByYear(year);
-        }
-        
+
+
     }
 }

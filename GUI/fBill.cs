@@ -54,13 +54,17 @@ namespace GUI
 
             MessageBox.Show("Thanh toán thành công!");
 
-            
-            //UpdateSalesChart();
+
             this.Close();
             var displayTableForm = Application.OpenForms.OfType<fDisplayTable>().FirstOrDefault();
             if (displayTableForm != null)
             {
                 displayTableForm.Show();
+            }
+            else
+            {
+                fDisplayTable newDisplayTableForm = new fDisplayTable();
+                newDisplayTableForm.Show();
             }
 
         }
@@ -92,14 +96,5 @@ namespace GUI
             var imageQR = QRCodeHelper.TaoVietQRCodeImage(content);
             pbBank.Image = imageQR;
         }
-        /*private void UpdateSalesChart()
-{
-// Cập nhật biểu đồ doanh số
-var salesReportForm = Application.OpenForms.OfType<fIncomeRp>().FirstOrDefault();
-if (salesReportForm != null)
-{
-salesReportForm.UpdateChart();
-}
-} */
     }
 }

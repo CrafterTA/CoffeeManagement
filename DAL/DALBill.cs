@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -27,13 +25,14 @@ namespace DAL
         {
             return CafeEntities.Instance.Bills.Find(billID);
         }
-        public void CreateBill( int orderDetailID, DateTime paymentDate, string paymentStatus)
+        public void CreateBill(int orderDetailID, DateTime paymentDate, string paymentStatus)
         {
             var orderDetail = CafeEntities.Instance.OrderDetails.Find(orderDetailID);
             if (orderDetail == null)
             {
                 throw new Exception($"OrderDetailID {orderDetailID} không tồn tại trong bảng OrderDetail.");
             }
+
             decimal totalMoney = (decimal)(orderDetail.Quantity * (orderDetail.ProductSize.Product.Price + orderDetail.ProductSize.Size.SizePrice));
             var bill = new Bill()
             {
@@ -44,39 +43,40 @@ namespace DAL
             };
             CafeEntities.Instance.Bills.Add(bill);
             CafeEntities.Instance.SaveChanges();
-
         }
+
         public List<Bill> GetIncomeByDate(DateTime date)
         {
-            var targetDate = date.Date;
-            return CafeEntities.Instance.Bills
+            date = DateTime.Now.Date;
+            var bills = CafeEntities.Instance.Bills
                 .Where(b => b.PaymentDate.HasValue &&
-                            b.PaymentDate.Value.Year == targetDate.Year &&
-                            b.PaymentDate.Value.Month == targetDate.Month &&
-                            b.PaymentDate.Value.Day == targetDate.Day &&
+                            b.PaymentDate.Value.Year == date.Year &&
+                            b.PaymentDate.Value.Month == date.Month &&
+                            b.PaymentDate.Value.Day == date.Day &&
                             b.PaymentStatus == "Đã thanh toán")
                 .ToList();
+            return bills;
         }
-
-        public List<Bill> GetIncomeByMonth(int month, int year)
+        public decimal TotalIncomeToday()
         {
-            return CafeEntities.Instance.Bills
-                .Where(b => b.PaymentDate.HasValue &&
-                            b.PaymentDate.Value.Month == month &&
-                            b.PaymentDate.Value.Year == year &&
-                            b.PaymentStatus == "Đã thanh toán")
-                .ToList();
-        }
-
-        public List<Bill> GetIncomeByYear(int year)
-        {
-            return CafeEntities.Instance.Bills
-                .Where(b => b.PaymentDate.HasValue &&
-                            b.PaymentDate.Value.Year == year &&
-                            b.PaymentStatus == "Đã thanh toán")
-                .ToList();
+            var today = DateTime.Now.Date;
+            var bills = GetIncomeByDate(today);
+            return bills.Sum(b => b.Total);
         }
         
+        public decimal TotalIncomeThisMonth()
+        {
+            var today = DateTime.Now;
+            var totalIncome = CafeEntities.Instance.Bills
+                .Where(b => b.PaymentDate.HasValue &&
+                            b.PaymentDate.Value.Year == today.Year &&
+                            b.PaymentDate.Value.Month == today.Month &&
+                            b.PaymentStatus == "Đã thanh toán")
+                .Sum(b => b.Total);
+            return totalIncome;
+        }
+
+
 
     }
 }

@@ -27,8 +27,8 @@ namespace GUI
         private void btnCategory_Click(object sender, EventArgs e)
         {
             this.Hide();
-            fDisplayTable fDisplayTable = new fDisplayTable();
-            fDisplayTable.ShowDialog();
+            fDisplayTableS fDisplayTableS = new fDisplayTableS();
+            fDisplayTableS.ShowDialog();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.siticoneControlBox2 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
             this.siticoneControlBox1 = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
             this.btnReturn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbCategory
@@ -67,7 +68,7 @@
             this.btnCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(869, 12);
+            this.btnCheckOut.Location = new System.Drawing.Point(949, 12);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(180, 45);
             this.btnCheckOut.TabIndex = 2;
@@ -103,12 +104,22 @@
             this.btnReturn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(654, 12);
+            this.btnReturn.Location = new System.Drawing.Point(734, 12);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(161, 45);
             this.btnReturn.TabIndex = 5;
             this.btnReturn.Text = "Đổi bàn";
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(562, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 31);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "MENU";
             // 
             // fDisplayProduct
             // 
@@ -116,6 +127,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1295, 692);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.siticoneControlBox2);
             this.Controls.Add(this.siticoneControlBox1);
@@ -124,9 +136,11 @@
             this.Controls.Add(this.cmbCategory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDisplayProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDisplayProduct";
             this.Load += new System.EventHandler(this.fDisplayProduct_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,5 +152,6 @@
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton btnReturn;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -200,6 +200,7 @@
             this.Controls.Add(this.siticonePanel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fPresentationS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fPresentationS";
             this.siticonePanel1.ResumeLayout(false);
             this.siticonePanel2.ResumeLayout(false);
